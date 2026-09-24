@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HawkBot — FTC Into the Deep Robot | David Dwyer</title>
+  <meta name="description" content="Design case study: HawkBot, our first fully custom CNC-machined carbon fiber robot chassis.">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0b0d'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ff5533'>DD</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">David Dwyer<span>.</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Menu">Menu</button>
+    <div class="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <a class="back" href="../index.html#work">← All projects</a>
+    <div class="eyebrow">FIRST Tech Challenge · Into the Deep · 2024–25</div>
+    <h1>HawkBot</h1>
+    <p class="lead">Our team's first fully custom robot. In one season it went from a kit-based prototype to a CNC-machined carbon fiber and polycarbonate machine with separate intake and scoring slide systems, color-sensing intake, and a nacelle-style drivetrain.</p>
+    <dl class="facts">
+      <div><dt class="mono">Role</dt><dd>Design Lead · CAD + Build</dd></div>
+      <div><dt class="mono">Team</dt><dd>3734 Iron Giant (7 members)</dd></div>
+      <div><dt class="mono">Tools</dt><dd>Fusion 360, Onshape, CAM, Blender</dd></div>
+      <div><dt class="mono">Result</dt><dd>1st Place Design Award, 2025</dd></div>
+    </dl>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="viewer-frame reveal">
+    <model-viewer
+      src="../assets/models/hawkbot.glb" orientation="0deg -90deg 0deg"
+      alt="Interactive 3D model of HawkBot"
+      camera-controls auto-rotate rotation-per-second="14deg" shadow-intensity="1" shadow-softness="0.8"
+      environment-image="neutral" exposure="1.1" camera-orbit="35deg 70deg auto" touch-action="pan-y">
+    </model-viewer>
+    <div class="viewer-bar"><span class="mono">Drag to rotate · Scroll or pinch to zoom</span><span class="mono">HawkBot V2 · untextured CAD export</span></div>
+  </div>
+</div>
+
+<section class="cs-section" style="margin-top:72px">
+  <div class="wrap cs-grid">
+    <header><span class="mono">01 · Context</span><h2>The challenge</h2></header>
+    <div class="prose">
+      <p>Iron Giant is a feeder team: most members are rookies each year. This season most of the team was new to FTC. The game asked robots to collect "samples" from a central submersible. Robots could either drop samples into a high basket or clip them onto a high bar as "specimens," and fast cycles decided matches.</p>
+      <p>Previous robots were built on REV aluminum extrusion kits. We had three season goals for the design side:</p>
+      <ul>
+        <li>Design a <strong>custom chassis</strong> with CNC-milled carbon fiber and 3D-printed parts</li>
+        <li>Make it <strong>fast, low-profile, and built for this specific game</strong>, with odometry pods for accurate position tracking</li>
+        <li>Teach rookies the full design process, from CAD and CAM to manufacturing and testing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">02 · Iteration</span><h2>Three robots in one season</h2></header>
+    <div class="prose">
+      <div class="table-scroll">
+      <table class="iter">
+        <thead><tr><th>Version</th><th>Design</th><th>What we learned</th></tr></thead>
+        <tbody>
+          <tr><td>V1</td><td>Kit chassis, one linear slide on a shoulder joint (250° range), rotating claw intake</td><td>Quick to build and good for testing ideas, but the intake was unreliable and cycles were slow</td></tr>
+          <tr><td>V1.5</td><td>Drivetrain V2, custom shoulder joint (280°), claw intake V2</td><td>Much faster and a more reliable arm, but the arm joint was still a bottleneck</td></tr>
+          <tr><td>V2</td><td>Custom carbon fiber/polycarbonate chassis, 3-stage vertical slides, 2-stage horizontal slides, beater intake with color sensors, transfer tray, shoulder-mounted claw</td><td>Fastest intake and most reliable scoring, but more complex to code and drive</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="gallery">
+        <figure class="w6"><button class="shot"><img src="../assets/img/hawkbot-v1.webp" alt="HawkBot V1 render" loading="lazy"></button><figcaption>V1: prototype with a shoulder-mounted slide</figcaption></figure>
+        <figure class="w6"><button class="shot"><img src="../assets/img/hawkbot-v2.webp" alt="HawkBot V1.5 render" loading="lazy"></button><figcaption>V1.5: custom carbon fiber plates and the new drivetrain</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">03 · Chassis</span><h2>The nacelle drivetrain</h2></header>
+    <div class="prose">
+      <p>As CAD lead, I spent the summer designing a <strong>Drivetrain V0</strong> (about 40 hours of CAD) to move the team from extrusion kits to a custom chassis. I refined it through hundreds of messages with our sister team, our mentor, FTC's North Texas program coordinator, and the international FTC community on Discord. It wasn't built that season because we couldn't afford it yet, but it led directly to V2.</p>
+      <p><strong>Drivetrain V2</strong> puts each pair of mecanum wheels in a carbon fiber and polycarbonate <strong>nacelle</strong>. The nacelles:</p>
+      <ul>
+        <li>contain the drivetrain parts so they can be serviced separately</li>
+        <li>each hold an odometry pod for accurate position tracking</li>
+        <li>raise the robot and shield the wheels so it doesn't accidentally push samples around</li>
+      </ul>
+      <p>The robot uses more than 400 cm² of carbon fiber and polycarbonate panels, and it has more custom parts than off-the-shelf ones. The downsides were cost, long manufacturing time, and less reuse between seasons. Our sponsorship (below) paid for it.</p>
+      <div class="media-row">
+        <figure><div class="video-frame"><video autoplay muted loop playsinline preload="metadata" poster="../assets/img/hawkbot-turntable-poster.webp"><source src="../assets/video/hawkbot-turntable.mp4" type="video/mp4"></video></div><figcaption>Turntable render</figcaption></figure>
+        <figure><div class="video-frame"><video controls muted playsinline preload="none" poster="../assets/img/cnc-carbon-fiber-timelapse-poster.webp"><source src="../assets/video/cnc-carbon-fiber-timelapse.mp4" type="video/mp4"></video></div><figcaption>Time-lapse of CNC-milling our carbon fiber plates</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">04 · Problem solving</span><h2>What broke, and how we fixed it</h2></header>
+    <div class="prose">
+      <p><strong>Beater intake.</strong> We replaced the claw intake with surgical-tubing beaters driven by a 9:1 UltraPlanetary motor. Two REV color sensors let it reject wrong-color samples and keep the right ones, capturing a sample in 0.5 to 3 seconds. Timing belts funnel the sample back into a transfer tray.</p>
+      <div class="table-scroll">
+      <table class="iter">
+        <thead><tr><th>Problem</th><th>Root cause</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Claw broke</td><td>Rack-and-pinion gears stripped and placement had to be very precise</td><td>Pyramid-pattern gripper that works even when placement is imprecise</td></tr>
+          <tr><td>Weak grip</td><td>Not enough contact area or friction on the sample</td><td>Grippers shaped to fit the sample, coated with rubber cement</td></tr>
+          <tr><td>Belt skipping</td><td>CAM/CNC errors put holes in the wrong places</td><td>Adapters that use the existing holes to mount an idler pulley for tension</td></tr>
+          <tr><td>Servo stalling</td><td>Intake motor mounted high above the pivot made the intake top-heavy</td><td>Elastic bands from a rear support beam to counterbalance the load</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The belt-tension issue taught me a lesson I still use: <strong>design in adjustment</strong>. Every drivetrain and belt I've designed since has tensioning slots.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">05 · Results</span><h2>Outcome</h2></header>
+    <div class="prose">
+      <div class="callouts" style="margin-top:0">
+        <div class="callout"><b>~200 hrs</b><span>of CAD on the robot</span></div>
+        <div class="callout"><b>83 pts</b><span>average score with the specimen strategy (vs. 43 with samples)</span></div>
+        <div class="callout"><b>$2,825</b><span>from Southwest Airlines, which fully funded V2</span></div>
+      </div>
+      <p>We compared the two scoring strategies with match data and chose specimen scoring, which almost doubled our average. Southwest's support came with real engineering management lessons: a <strong>phase-based budget</strong> (chassis first, then subsystems), timelines required for continued funding, and design reviews that pushed us to balance new ideas against what we could actually build.</p>
+      <div class="gallery">
+        <figure class="w6"><button class="shot wide"><img src="../assets/img/hawkbot-render-1.webp" alt="HawkBot front render" loading="lazy"></button><figcaption>Render: front view</figcaption></figure>
+        <figure class="w6"><button class="shot wide"><img src="../assets/img/hawkbot-render-2.webp" alt="HawkBot angled render" loading="lazy"></button><figcaption>Render: three-quarter view</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <a class="next-project" href="go-kart.html">
+    <div><span class="mono muted">Next project</span><h3>Custom go-kart</h3></div>
+    <span class="btn">→</span>
+  </a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> David Dwyer</span>
+    <a href="mailto:davidd22@tamu.edu">davidd22@tamu.edu</a>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scorpius — FTC DECODE Robot | David Dwyer</title>
+  <meta name="description" content="Design case study: Scorpius, a vision-guided flywheel launcher robot with a carbon fiber tank-drive chassis and 138 custom parts.">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0b0d'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ff5533'>DD</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">David Dwyer<span>.</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Menu">Menu</button>
+    <div class="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <a class="back" href="../index.html#work">← All projects</a>
+    <div class="eyebrow">FIRST Tech Challenge · DECODE · 2025–26</div>
+    <h1>Scorpius</h1>
+    <p class="lead">A vision-guided flywheel launcher on a custom carbon fiber tank-drive chassis. The turret tracks the goal automatically, and the wide intake lets the driver collect game pieces without precise lining up. More of the robot is custom-made than bought off the shelf.</p>
+    <dl class="facts">
+      <div><dt class="mono">Role</dt><dd>Design Lead · CAD + Build</dd></div>
+      <div><dt class="mono">Team</dt><dd>6832 Iron Reign (11 members)</dd></div>
+      <div><dt class="mono">Tools</dt><dd>Onshape, Fusion 360 CAM, Blender</dd></div>
+      <div><dt class="mono">Result</dt><dd>1st Place Design Award, 2026</dd></div>
+    </dl>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="viewer-frame reveal">
+    <model-viewer id="mv-scorpius"
+      src="../assets/models/scorpius.glb"
+      alt="Interactive 3D model of Scorpius"
+      camera-controls auto-rotate rotation-per-second="14deg" shadow-intensity="1" shadow-softness="0.8"
+      environment-image="neutral" exposure="1.05" camera-orbit="35deg 72deg auto" touch-action="pan-y">
+    </model-viewer>
+    <div class="viewer-bar">
+      <span class="mono">Drag to rotate · Scroll or pinch to zoom</span>
+      <div class="viewer-tabs" data-target="mv-scorpius">
+        <button aria-pressed="true" data-src="../assets/models/scorpius.glb">Full robot</button>
+        <button aria-pressed="false" data-src="../assets/models/scorpius-intake.glb">Intake</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="cs-section" style="margin-top:72px">
+  <div class="wrap cs-grid">
+    <header><span class="mono">01 · Problem</span><h2>The challenge</h2></header>
+    <div class="prose">
+      <p>This season's robots collected game pieces called "artifacts" and launched them into a goal from one of two launch zones. Several constraints shaped our design:</p>
+      <ul>
+        <li><strong>Cycle time mattered most.</strong> Pattern bonuses only counted after each period, so fast, repeatable scoring was worth more than sorting.</li>
+        <li><strong>The near zone was crowded</strong> and matches involved a lot of defense, so we wanted to <strong>score accurately from the far zone</strong>.</li>
+        <li><strong>Artifacts were alliance-neutral</strong>, so both alliances fought over them. The intake had to be fast and forgiving.</li>
+      </ul>
+      <p><strong>Goal:</strong> move artifacts quickly and smoothly from pickup to launch, score consistently from anywhere on the field, and build a chassis tough enough for contested areas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">02 · Rapid prototyping</span><h2>Launcher in 2 days</h2></header>
+    <div class="prose">
+      <p>Right after the game was revealed, we built three flywheel launchers from MDF and REV rail in two days. We wanted to find out which approaches worked before committing to CAD.</p>
+      <ul>
+        <li><strong>Counter-rotating wheels:</strong> didn't reach enough height or distance, and shots were inconsistent because each wheel touched the artifact only briefly.</li>
+        <li><strong>3D-printed nylon flywheel wrapped in surgical tubing:</strong> reached enough distance, but the tubing stretched and left gaps, so shots were inaccurate.</li>
+        <li><strong>Foam-filled tire at ~45°:</strong> the tread gripped well, but even at a 1:1 gear ratio it lacked speed.</li>
+      </ul>
+      <p><strong>What we learned:</strong> where and how the wheel contacts the artifact matters most. Contact far from the center turns wheel speed into spin instead of velocity. This confirmed that a custom flywheel would be the foundation of the robot.</p>
+      <div class="gallery">
+        <figure class="w6"><button class="shot"><img src="../assets/img/scorpius-062.webp" alt="Early launcher prototype" loading="lazy"></button><figcaption>Off-robot MDF and REV rail test platform</figcaption></figure>
+        <figure class="w6"><button class="shot"><img src="../assets/img/scorpius-064.webp" alt="Flywheel launcher prototype with tire" loading="lazy"></button><figcaption>Foam-filled tire flywheel prototype</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">03 · Iteration</span><h2>Rimfire: the flywheel, five versions</h2></header>
+    <div class="prose">
+      <p>Test data showed a large drop in RPM each time an artifact made contact. The flywheel wasn't storing enough rotational energy, so back-to-back shots fell short. Most of the redesigns below aimed to <strong>increase moment of inertia</strong> without making spin-up too slow.</p>
+      <div class="table-scroll">
+      <table class="iter">
+        <thead><tr><th>Version</th><th>Change</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>V1</td><td>Lightweight carbon fiber frame, nubbed TPU tire, hub motor in a nylon shell</td><td>Spun up quickly but vibrated heavily; low inertia and poor traction</td></tr>
+          <tr><td>V2–V3</td><td>Rigid outer nylon shell, large curved-flap TPU tire, vented motor housing</td><td>Enough launch power, but speed dropped after each shot and the single motor limited spin-up</td></tr>
+          <tr><td>V4</td><td>Two external motors on belts, plus <strong>"momentum batteries"</strong>: nylon pods holding 12 steel balls each (135.5 g per pod), with steel-filled PLA rings</td><td>Almost no speed drop between shots and easier maintenance, but slower spin-up</td></tr>
+          <tr><td>V5</td><td>Much smaller diameter, simplified 3-part design, steel flywheels, grip tape</td><td>Higher velocity and inertia, less backspin on artifacts, easiest to maintain</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callouts">
+        <div class="callout"><b>143 g</b><span>Rimfire V2 rotating mass</span></div>
+        <div class="callout"><b>582 g</b><span>V3.5 with momentum batteries (4× V2)</span></div>
+        <div class="callout"><b>Quartic</b><span>regression fit of distance to flywheel speed for auto-aim</span></div>
+      </div>
+      <div class="gallery">
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-206.webp" alt="Rimfire flywheel CAD" loading="lazy"></button><figcaption>Rimfire flywheel assembly (CAD)</figcaption></figure>
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-207.webp" alt="Rimfire flywheel exploded CAD" loading="lazy"></button><figcaption>Rimfire assembly with motor and axle</figcaption></figure>
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-218.webp" alt="Momentum battery ring CAD" loading="lazy"></button><figcaption>Nylon ring that holds 12 steel bearing balls to add rim mass</figcaption></figure>
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-469.webp" alt="Flywheel RPM graph" loading="lazy"></button><figcaption>Flywheel velocity logged across shots, which showed the speed drop</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">04 · Subsystems</span><h2>Intake, turret &amp; chassis</h2></header>
+    <div class="prose">
+      <p><strong>Intake, 4 versions.</strong> V1 used a belt with TPU flaps and could only pick up artifacts from dead center. The V2 "wing" intakes were too complex and couldn't reach artifacts without exceeding the size limit. The V3 "converger" rollers funneled artifacts toward the middle, but the left roller interfered with the side belt. <strong>V4 removed the side belt</strong> and moved the belt into the center channel. This <strong>tripled the intake area</strong>, and its passive bobbing motion keeps artifacts from jamming.</p>
+      <p><strong>Stinger launcher and turret.</strong> The launcher is a stand-alone module that slides in and out for maintenance. The turret is driven by <strong>herringbone gears</strong> to reduce backlash, and a Limelight camera tracks the goal's AprilTag. That means the driver doesn't have to turn the whole robot to aim.</p>
+      <p><strong>Chassis.</strong> We chose an unusual two-wheel <strong>carbon fiber tank drive</strong> over a standard four-motor mecanum base. It freed up motors for other subsystems, and its shape allowed full and partial end-game parking despite its size. The tradeoff: no strafing, and the robot can pivot when hit away from the wheels. The plates use an <strong>8 mm hole grid</strong> for future add-ons, every belt has tensioning slots, and the launcher has arced slots for adjusting launch angle.</p>
+      <div class="gallery">
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-292.webp" alt="Intake CAD with artifacts" loading="lazy"></button><figcaption>V4 intake with three artifacts in the center channel</figcaption></figure>
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-311.webp" alt="Intake roller CAD" loading="lazy"></button><figcaption>Converger rollers and TPU beater flaps</figcaption></figure>
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-238.webp" alt="Stinger launcher CAD" loading="lazy"></button><figcaption>Stinger launcher module</figcaption></figure>
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-343.webp" alt="Chassis top view CAD" loading="lazy"></button><figcaption>Top view of the tank-drive chassis layout</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">05 · Manufacturing</span><h2>Designed to be made in-house</h2></header>
+    <div class="prose">
+      <p>We made nearly every custom part ourselves on our own CNC router and 3D printers. Making parts in-house saved roughly $2,000 and let us go from CAD to a test part in the same day. Milling carbon fiber was difficult at first; we wasted material by rushing until we learned the feeds, fixturing, and patience it requires.</p>
+      <div class="table-scroll">
+      <table class="iter">
+        <thead><tr><th>Subsystem</th><th>3D printed (unique / total)</th><th>CNC milled (unique / total)</th></tr></thead>
+        <tbody>
+          <tr><td>Chassis</td><td>16 / 29</td><td>15 / 23</td></tr>
+          <tr><td>Intake</td><td>7 / 11</td><td>4 / 4</td></tr>
+          <tr><td>Stinger</td><td>5 / 6</td><td>4 / 5</td></tr>
+          <tr><td>Rimfire</td><td>7 / 10</td><td>4 / 4</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>35 / 56</strong></td><td><strong>27 / 36</strong></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="muted" style="font-size:.92rem">138 custom parts in total. About 269 hours of CAD and about 206 3D prints over the season.</p>
+      <div class="gallery">
+        <figure class="w6"><button class="shot"><img src="../assets/img/scorpius-408.webp" alt="CNC router in the workshop" loading="lazy"></button><figcaption>The CNC router we used to cut carbon fiber plates</figcaption></figure>
+        <figure class="w6"><button class="shot"><img src="../assets/img/scorpius-291.webp" alt="Scorpius robot during assembly" loading="lazy"></button><figcaption>Scorpius during assembly</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">06 · Results</span><h2>How it performed</h2></header>
+    <div class="prose">
+      <div class="callouts" style="margin-top:0">
+        <div class="callout"><b>~10×</b><span>increase in total points from Meet 1 to Regionals</span></div>
+        <div class="callout"><b>9–12</b><span>artifacts scored in the 30-second autonomous period</span></div>
+        <div class="callout"><b>1st</b><span>Place Design Award, 2026</span></div>
+      </div>
+      <p>Each version shortened our cycle times. The turret's automatic aiming, flywheel speed set by distance, and one-button launch sequence took aiming and timing off the driver, so they could focus on strategy and defense.</p>
+      <p><strong>What I'd change:</strong> the tank drive's lack of strafing and the robot's tendency to pivot when hit were real weaknesses in heavy-defense matches. I'd look at a compact swerve or hybrid drive next, using what we learned from our summer swerve project (below).</p>
+      <div class="gallery">
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-165.webp" alt="Average points by event chart" loading="lazy"></button><figcaption>Average points by event across the season</figcaption></figure>
+        <figure class="w6"><button class="shot plate"><img src="../assets/img/scorpius-176.webp" alt="Cycle time by event chart" loading="lazy"></button><figcaption>Average cycle time by event, actual vs. predicted</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">Summer project</span><h2>Simply Swerve</h2></header>
+    <div class="prose">
+      <p>Between seasons we develop our skills on open-ended projects. "Simply Swerve" is a swerve drive module and a three-module ("tri-swerve") chassis that we designed, tested at the Dallas Personal Robotics Group's Roborama competition (where it won a Da Vinci Award for innovative design), and published for other FTC teams to use.</p>
+      <div class="gallery">
+        <figure class="w6"><button class="shot tall plate"><img src="../assets/img/scorpius-027.webp" alt="Swerve module CAD" loading="lazy"></button><figcaption>Swerve drive module (CAD)</figcaption></figure>
+        <figure class="w6"><button class="shot tall plate"><img src="../assets/img/scorpius-028.webp" alt="Swerve module side view CAD" loading="lazy"></button><figcaption>Module side view</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap cs-grid">
+    <header><span class="mono">Visualization</span><h2>Reveal trailer</h2></header>
+    <div class="prose">
+      <p>A reveal trailer for Scorpius, animated and rendered in Blender from the CAD model.</p>
+      <div class="video-frame"><video controls preload="none" playsinline poster="../assets/img/scorpius-trailer-poster.webp"><source src="../assets/video/scorpius-trailer.mp4" type="video/mp4"></video></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <a class="next-project" href="hawkbot.html">
+    <div><span class="mono muted">Next project</span><h3>HawkBot · 2024–25</h3></div>
+    <span class="btn">→</span>
+  </a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> David Dwyer</span>
+    <a href="mailto:davidd22@tamu.edu">davidd22@tamu.edu</a>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>David Dwyer — Mechanical Design & Fabrication</title>
+  <meta name="description" content="Engineering portfolio of David Dwyer: competition robot design, CAD, CNC machining, carbon fiber fabrication, and hands-on builds.">
+  <meta property="og:title" content="David Dwyer — Mechanical Design & Fabrication">
+  <meta property="og:description" content="Competition robots, CAD, CNC and carbon fiber, a 50 mph go-kart, and an Eagle Scout build.">
+  <meta property="og:image" content="assets/img/scorpius-035.webp">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0b0d'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ff5533'>DD</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">David Dwyer<span>.</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Menu">Menu</button>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Mechanical Engineering · Texas A&amp;M</div>
+      <h1>I design it in CAD. <span class="accent">Then I build it.</span></h1>
+      <p class="lead">I'm David Dwyer, a mechanical engineering student who designs competition robots, machines carbon fiber, and builds things that move. I was Design Lead for two FIRST Tech Challenge teams. Our robots were made mostly from parts we designed and manufactured ourselves.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#work">See my work</a>
+        <a class="btn" href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+      </div>
+    </div>
+    <div class="hero-viewer">
+      <model-viewer
+        src="assets/models/scorpius.glb"
+        alt="Interactive 3D model of Scorpius, a competition robot I helped design"
+        camera-controls auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+        interaction-prompt="none" shadow-intensity="1" shadow-softness="0.9"
+        environment-image="neutral" exposure="1.05" camera-orbit="35deg 70deg auto"
+        disable-zoom touch-action="pan-y">
+      </model-viewer>
+      <div class="viewer-hint mono">Drag to rotate · Scorpius, 2025–26</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats reveal">
+    <div class="stat"><b>150+</b><span>custom parts across 3 competition robots</span></div>
+    <div class="stat"><b>~470</b><span>team CAD hours across the last two seasons</span></div>
+    <div class="stat"><b>2×</b><span>1st Place Design Award (2025, 2026)</span></div>
+    <div class="stat"><b>12+</b><span>teams worldwide use our open-source chassis</span></div>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">Selected work</div>
+        <h2>Projects</h2>
+      </div>
+      <p class="muted">Each project covers the problem, the design iterations, how the parts were made, and how it performed. Most include a 3D model you can rotate.</p>
+    </div>
+
+    <div class="projects">
+      <a class="card span-7 reveal" href="projects/scorpius.html">
+        <div class="card-media plate"><img src="assets/img/scorpius-035.webp" alt="CAD render of Scorpius robot" loading="lazy"></div>
+        <div class="card-body">
+          <span class="mono card-meta">FTC DECODE · 2025–26 · Team 6832</span>
+          <h3>Scorpius: vision-guided flywheel launcher robot</h3>
+          <p>Carbon fiber tank-drive chassis with a turret, a five-version custom flywheel, and an intake that covers 3× the area. 138 custom parts.</p>
+          <div class="tags"><span class="tag">Onshape</span><span class="tag">CNC carbon fiber</span><span class="tag">3D printing</span><span class="tag">3D model</span></div>
+          <span class="card-arrow">View case study</span>
+        </div>
+      </a>
+
+      <a class="card span-5 reveal" href="projects/hawkbot.html">
+        <div class="card-media"><img src="assets/img/hawkbot-v2.webp" alt="Render of HawkBot V2 robot" loading="lazy"></div>
+        <div class="card-body">
+          <span class="mono card-meta">FTC Into the Deep · 2024–25 · Team 3734</span>
+          <h3>HawkBot: our first fully custom chassis</h3>
+          <p>Went from a kit-based prototype to a CNC-machined carbon fiber and polycarbonate robot in one season.</p>
+          <div class="tags"><span class="tag">Fusion 360</span><span class="tag">CAM</span><span class="tag">3D model</span></div>
+          <span class="card-arrow">View case study</span>
+        </div>
+      </a>
+
+      <a class="card span-5 reveal" href="projects/go-kart.html">
+        <div class="card-media"><img src="assets/img/kart-1.webp" alt="Custom go-kart with roll cage" loading="lazy"></div>
+        <div class="card-body">
+          <span class="mono card-meta">Personal project · Lead builder</span>
+          <h3>Custom go-kart, built to 50 mph</h3>
+          <p>Frame, drivetrain, steering, electrical and safety systems, plus engine and control upgrades.</p>
+          <div class="tags"><span class="tag">Fabrication</span><span class="tag">Drivetrain</span><span class="tag">Tuning</span></div>
+          <span class="card-arrow">View case study</span>
+        </div>
+      </a>
+
+      <a class="card span-7 reveal" href="projects/eagle-scout.html">
+        <div class="card-media"><img src="assets/img/eagle-finished.webp" alt="Finished rainwater collection platform" loading="lazy"></div>
+        <div class="card-body">
+          <span class="mono card-meta">Eagle Scout project · Project manager</span>
+          <h3>Rainwater collection platforms and wayfinding markers</h3>
+          <p>Designed in CAD, then built and installed with 25+ volunteers on a $2,100+ budget. Covered by a local Dallas newspaper.</p>
+          <div class="tags"><span class="tag">CAD</span><span class="tag">Project management</span><span class="tag">Construction</span></div>
+          <span class="card-arrow">View case study</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">Toolkit</div>
+        <h2>What I work with</h2>
+      </div>
+    </div>
+    <div class="skills">
+      <div class="skill reveal">
+        <h3>CAD / CAM</h3>
+        <ul>
+          <li>Onshape, Fusion 360</li>
+          <li>Large multi-subsystem assemblies</li>
+          <li>Fusion 360 CAM toolpaths</li>
+          <li>Design for manufacturing</li>
+          <li>Blender rendering and animation</li>
+        </ul>
+      </div>
+      <div class="skill reveal">
+        <h3>Fabrication</h3>
+        <ul>
+          <li>CNC milling (carbon fiber, polycarbonate)</li>
+          <li>3D printing (PLA, nylon, TPU)</li>
+          <li>Carbon fiber layup</li>
+          <li>Aluminum fabrication</li>
+          <li>Hand and power tools, assembly</li>
+        </ul>
+      </div>
+      <div class="skill reveal">
+        <h3>Systems &amp; Software</h3>
+        <ul>
+          <li>Drivetrains: mecanum, tank, swerve</li>
+          <li>Flywheels, linear slides, intakes</li>
+          <li>Sensor integration and system schematics</li>
+          <li>Java, Python</li>
+          <li>Technical presentations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="padding-top:0">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <div class="eyebrow">Experience</div>
+      <h2 style="margin-bottom:26px">Leadership</h2>
+      <ul class="list-rows">
+        <li><span class="when">2024–2026</span><div><b>Team Captain &amp; Design Lead, FIRST Tech Challenge</b><span>Teams 6832 Iron Reign &amp; 3734 Iron Giant. Led a 15-member team to Regional and State Championships by coordinating the design, build, and programming sub-teams.</span></div></li>
+        <li><span class="when">2022–2024</span><div><b>Member, FIRST Tech Challenge</b><span>CAD, design and build.</span></div></li>
+        <li><span class="when">2025–now</span><div><b>Pool Technician &amp; Shift Leader, Glen Cove Swim Club</b><span>Maintained filtration and chemical systems, reducing facility downtime by 20%. Named Rookie Lifeguard of the Year (2025).</span></div></li>
+        <li><span class="when">2022–now</span><div><b>Eagle Scout, Troop 838</b><span>Project manager for a community infrastructure build. Teaches younger scouts technical and safety skills.</span></div></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Recognition</div>
+      <h2 style="margin-bottom:26px">Honors</h2>
+      <ul class="list-rows">
+        <li><span class="when">2025 · 2026</span><div><b>1st Place Design Award</b><span>Regional FTC engineering honor for our robot designs</span></div></li>
+        <li><span class="when">FTC</span><div><b>1st Place Sustain Award · 2nd Place Inspire Award</b><span>For mechanical innovation, reliability, and engineering documentation</span></div></li>
+        <li><span class="when">Open source</span><div><b>Chassis design used by 12+ teams worldwide</b><span>We published an open-source chassis design that other FTC teams have built</span></div></li>
+        <li><span class="when">Funding</span><div><b>~$13,000 in industry sponsorships</b><span>Raised through presentations to partners including Southwest Airlines</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get in touch</div>
+    <h2>Let's build something.</h2>
+    <p class="lead">I'm looking for engineering internships in mechanical design, manufacturing, and robotics.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="mailto:davidd22@tamu.edu">davidd22@tamu.edu</a>
+      <a class="btn" href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+      <!-- Add your LinkedIn here:
+      <a class="btn" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">LinkedIn</a> -->
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> David Dwyer</span>
+    <span>Dallas, TX · College Station, TX</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
