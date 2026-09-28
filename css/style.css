@@ -323,3 +323,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   .projects .card-media { aspect-ratio: 16 / 10; height: auto; min-height: 0; }
   .projects .card-body { padding: 26px 24px 30px; }
 }
+
+/* Homepage project groups (FSAE EV / FTC / Other) */
+.group-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  margin: 56px 0 20px; padding-top: 22px; border-top: 1px solid var(--line); scroll-margin-top: 84px; }
+.section-head + .group-head { margin-top: 8px; }
+.group-head h3 { font-size: clamp(1.4rem, 2.4vw, 1.75rem); letter-spacing: -0.025em; }
+.group-head .mono { color: var(--faint); }
