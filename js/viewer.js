@@ -284,12 +284,24 @@ class Viewer {
     root.traverse((o) => { if (o.userData && hiddenNames.includes(o.userData.name)) o.visible = false; });
     const isHidden = (o) => { while (o) { if (!o.visible) return true; o = o.parent; } return false; };
 
+    // See-through reference bodies (e.g. a rough outline of a car around a test jig): never picked, no edges
+    const ghostNames = entry.ghosts || this.cfg.ghosts || [];
+    const isGhost = (o) => { while (o) { if (o.userData && ghostNames.includes(o.userData.name)) return true; o = o.parent; } return false; };
+
     this.meshes = [];
+    this.ghostMeshes = [];
     this.meshPart.clear();
     root.traverse((o) => {
       if (o.isMesh && !isHidden(o)) {
         o.material = Array.isArray(o.material) ? o.material.map((m) => m.clone()) : o.material.clone();
         const mats = Array.isArray(o.material) ? o.material : [o.material];
+        if (ghostNames.length && isGhost(o)) {
+          mats.forEach((m) => { m.transparent = true; m.depthWrite = false; });
+          o.renderOrder = 1;
+          o.raycast = () => {};
+          this.ghostMeshes.push(o);
+          return;
+        }
         mats.forEach((m) => { m.polygonOffset = true; m.polygonOffsetFactor = 1; m.polygonOffsetUnits = 1; if (m.emissive) m.userData.baseEmissive = m.emissive.clone(); });
         this.meshes.push(o);
       }
@@ -326,6 +338,7 @@ class Viewer {
     this.wrapper.updateMatrixWorld(true);
     const box = new THREE.Box3();
     this.meshes.forEach((m) => box.expandByObject(m));
+    (this.ghostMeshes || []).forEach((m) => box.expandByObject(m));
     this.bounds = box;
     this.sphere = box.getBoundingSphere(new THREE.Sphere());
   }

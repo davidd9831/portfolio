@@ -8,6 +8,7 @@ It is still a plain static website (HTML, CSS and JavaScript) with no build step
 Portfolio Website v2/
 ├── index.html                 ← Home: intro splash + the "Welcome" window (About / Projects / Skills / Contact tabs)
 ├── projects/                  ← one page per project, laid out like an open CAD document
+│   ├── torsion-jig.html       ← AME26 torsional rigidity test jig (labels, see-through chassis outline)
 │   ├── fsae-brake-pedal.html  ← interactive brake pedal (explode, labels, pedal travel)
 │   ├── scorpius.html
 │   ├── hawkbot.html
@@ -18,6 +19,7 @@ Portfolio Website v2/
 │   ├── main.js                ← intro, tabs, project filter, help box, contents tree, lightbox
 │   ├── viewer.js              ← the 3D viewport (built on three.js)
 │   └── models/                ← one settings file per 3D model
+│       ├── torsion-jig.js     ← jig part names, numbered labels, see-through chassis outline
 │       ├── brake-pedal.js     ← part names, pedal motion, exploded view, numbered labels
 │       ├── scorpius.js
 │       └── hawkbot.js
@@ -85,7 +87,7 @@ The live site is **https://daviddwyer.org**, served by GitHub Pages from the rep
 | Replace the résumé | overwrite `assets/docs/David-Dwyer-Resume.pdf` (keep the same name) |
 | Email or LinkedIn address | search all `.html` files for `davidd22@tamu.edu` or `linkedin.com/in/daviddwyer` and replace |
 
-The title bar, right-edge links, bottom tabs and help text are repeated in every page (there's no build step), so a change to one of them has to be made in all six HTML files. A "find and replace in files" in VS Code does it in one go.
+The title bar, right-edge links, bottom tabs and help text are repeated in every page (there's no build step), so a change to one of them has to be made in all seven HTML files. A "find and replace in files" in VS Code does it in one go.
 
 ### Adding a project
 1. Copy the closest existing page in `projects/` and rename it.
@@ -103,3 +105,9 @@ The title bar, right-edge links, bottom tabs and help text are repeated in every
 - The parts are found by the **component names in the CAD export** (for example `Pedal2:1`, `Stop Plate:1`). If you re-export the GLB from a newer version of the assembly, keep the component names the same and everything keeps working.
 - The motion values were worked out from the CAD geometry: the pivot at the M8 pivot bolt, the 1 in slot (its full length gives exactly the 1.1 in master cylinder stroke), rest with the bearing at the bottom of the slot, and the hard stop where the pedal first touches the stop plate (30.3° of travel). Lock-up (15°) comes from your write-up and the BOTS trip (21°) from your four-position figure. These numbers are at the top of `js/models/brake-pedal.js` if anything changes.
 - The switch maker's model includes a duplicate "DUMMY" toggle body; the viewer hides it so it doesn't stay upright while the real lever is pushed over.
+
+### About the torsion jig model
+- `assets/models/torsion-jig.glb` was built from `AME 26 TR Jig Assembly.STEP` (SolidWorks, Oct 17, 2026). It holds **only the jig parts**, grouped into six named bodies: `Platform`, `Rear fixture`, `Rear mock upright faces`, `Front lever beam`, `Front mock upright faces` and `Pivot plate`.
+- The team's AME26 car parts in that STEP file (suspension, shocks, steering, pedal box, and the upright and toe-link parts on the front-left mock upright) are **left out on purpose**, because a model on the site can be downloaded by anyone. The chassis frame is replaced by `Chassis outline`: the frame voxelised at 15 mm, blurred and simplified to 7,000 triangles, so it shows where the car sits without its real tube geometry.
+- `ghosts: ['Chassis outline']` in `js/models/torsion-jig.js` tells the viewer to draw that body see-through, with no edges and no click selection.
+- Measurements quoted on the page come from the CAD: weight posts 1.153 m either side of the pivot, and 1.525 m between the front and rear mock upright faces.

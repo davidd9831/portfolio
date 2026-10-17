@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Torsional Rigidity Test Jig — Texas A&amp;M FSAE EV | David Dwyer</title>
+  <meta name="description" content="Design case study with an interactive 3D model: a test jig that measures the torsional stiffness of the Texas A&amp;M Formula SAE EV AME26 chassis to check its FEA. Rear anchored into concrete, front on a center pivot with weighted lever arms. Designed in SolidWorks.">
+  <meta property="og:title" content="Torsional Rigidity Test Jig — Texas A&amp;M FSAE EV | David Dwyer">
+  <meta property="og:description" content="Design case study with an interactive 3D model: a test jig that measures the torsional stiffness of the Texas A&amp;M Formula SAE EV AME26 chassis to check its FEA. Rear anchored into concrete, front on a center pivot with weighted lever arms. Designed in SolidWorks.">
+  <meta property="og:image" content="../assets/img/torsion-jig.webp">
+  <meta name="theme-color" content="#e8ebee">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c2126'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ffffff'>DD</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page-doc">
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h5v-6h3v6h5V9.5"/></symbol><symbol id="i-resume" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15.5h6M9 8.5h2.5"/></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16.5c.6-1.7 1.8-2.6 3.2-2.6s2.6.9 3.2 2.6"/><path d="M14.5 10h4M14.5 13.5h3"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 7 8.5 6.5L20.5 7"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2 1-1.2 1.9v.4"/><path d="M12 16.9v.2"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5.5 5.5"/></symbol><symbol id="i-car" viewBox="0 0 24 24"><path d="M2.5 15.5h2M9.3 15.5h5.9M20 15.5h1.5"/><path d="M3.5 13.2 7 11h3.5l1.6-2.3h2l1.4 2.3h3.6l2.3 2.7"/><circle cx="7" cy="15.5" r="2.3"/><circle cx="17.6" cy="15.5" r="2.3"/></symbol><symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="2"/><path d="M12 5v3"/><circle cx="12" cy="4" r="1"/><circle cx="9.5" cy="12.5" r="1.1"/><circle cx="14.5" cy="12.5" r="1.1"/><path d="M9.5 15.5h5M3 11.5v3.5M21 11.5v3.5"/></symbol><symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.6 4.2a4.6 4.6 0 0 0-4.4 6L4 16.4 7.6 20l6.2-6.2a4.6 4.6 0 0 0 6-4.4l-2.8 2.8-2.6-.6-.6-2.6z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx=".5"/><rect x="13" y="4" width="7" height="7" rx=".5"/><rect x="4" y="13" width="7" height="7" rx=".5"/><rect x="13" y="13" width="7" height="7" rx=".5"/></symbol><symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/><path d="M12 9v6M9 12h6"/></symbol><symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></symbol><symbol id="i-edges" viewBox="0 0 24 24"><path d="M4 8.5 8.5 4H20v11.5L15.5 20H4z"/><path d="M4 8.5h11.5V20M15.5 8.5 20 4"/></symbol><symbol id="i-explode" viewBox="0 0 24 24"><rect x="9.2" y="9.2" width="5.6" height="5.6"/><path d="M4 4l3.2 3.2M20 4l-3.2 3.2M4 20l3.2-3.2M20 20l-3.2-3.2"/><path d="M4 7V4h3M17 4h3v3M20 17v3h-3M7 20H4v-3"/></symbol><symbol id="i-balloon" viewBox="0 0 24 24"><circle cx="14.5" cy="9.5" r="5.5"/><path d="M10.6 13.4 4 20"/><path d="M13.6 8.1 15 7v5"/></symbol><symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol><symbol id="i-collapse" viewBox="0 0 24 24"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></symbol><symbol id="i-chev-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol><symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-assembly" viewBox="0 0 24 24"><path d="M12 3 20 7v4.5l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4M12 11v4.5"/><path d="M4 15.5 12 19.5l8-4"/></symbol><symbol id="i-part" viewBox="0 0 24 24"><path d="M12 4 19.5 8v8L12 20l-7.5-4V8z"/><path d="M4.5 8 12 12l7.5-4M12 12v8"/></symbol><symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2h8.5A1.5 1.5 0 0 1 21 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/></symbol><symbol id="i-section" viewBox="0 0 24 24"><path d="M5.5 3.5h13v17h-13z"/><path d="M8.5 8h7M8.5 11.5h7M8.5 15h4.5"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M8.5 3.5h7l1.8 2.7-1.8 2.8h-7L6.7 6.2z"/><path d="M10 9v11.5h4V9"/><path d="M10 12.5l4-1.2M10 16l4-1.2"/></symbol><symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="1.5"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8.5 6l1.5-2h4l1.5 2"/></symbol><symbol id="i-props" viewBox="0 0 24 24"><path d="M5 3.5h14v17H5z"/><path d="M8 8h2M12.5 8H16M8 12h2M12.5 12H16M8 16h2M12.5 16H16"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></symbol><symbol id="i-mill" viewBox="0 0 24 24"><path d="M9 3h6v4H9z"/><path d="M10 7v8l2 3 2-3V7"/><path d="M10 10.5l4-1.5M10 13.5l4-1.5"/><path d="M4 21h16"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8 8"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="titlebar">
+  <a class="tb-home" href="../index.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg><span>Home</span></a>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html#about">David Dwyer</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li aria-current="page">Torsion jig</li>
+    </ol>
+  </nav>
+  <span class="tb-file" title="Document name">ame26-tr-jig</span>
+  <button class="icon-btn" type="button" data-help aria-expanded="false" aria-controls="help-pop"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-help"></use></svg><span class="tb-help-label">How to use this site</span></button>
+</header>
+
+<aside class="taskpane" aria-label="Résumé and contact">
+  <ul>
+    <li><a class="is-resume" href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-resume"></use></svg><span class="tp-label">Résumé (PDF)</span></a></li>
+    <li><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span class="tp-label">LinkedIn</span></a></li>
+    <li><a href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span class="tp-label">Email davidd22@tamu.edu</span></a></li>
+  </ul>
+</aside>
+
+<div class="doc-layout">
+  <button class="sections-toggle" type="button" aria-expanded="false" aria-controls="doc-tree"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg><span>Sections</span><span class="current">Overview</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-chev-down"></use></svg></button>
+  <div class="tree" id="doc-tree">
+      <p class="tree-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>Contents</p>
+      <nav aria-label="Sections of this page">
+        <ul>
+          <li><a class="tree-item tree-root" href="#overview" data-label="Overview"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-assembly"></use></svg><span>ame26-tr-jig</span></a>
+            <ul><li><a class="tree-item" href="#overview" data-label="Overview"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Overview</span></a></li><li><a class="tree-item" href="#model" data-label="3D model"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg><span>3D model</span></a></li><li><a class="tree-item" href="#purpose" data-label="Why test it"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Why test it</span></a></li><li><a class="tree-item" href="#how" data-label="How it works"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>How it works</span></a></li><li><div class="tree-row"><button type="button" class="tree-caret needs-viewer" aria-expanded="true" aria-controls="tree-components" aria-label="Show or hide the parts list"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-chev-down"></use></svg></button><a class="tree-item" href="#components" data-label="Components"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-folder"></use></svg><span>Components</span><span class="tree-sub"></span></a></div>
+            <ul id="tree-components" class="needs-viewer"><li><button type="button" class="tree-item" data-select-part="rear" aria-pressed="false"><span class="tree-n">1</span><span>Rear fixture</span></button></li><li><button type="button" class="tree-item" data-select-part="rearMounts" aria-pressed="false"><span class="tree-n">2</span><span>Rear suspension mounts</span></button></li><li><button type="button" class="tree-item" data-select-part="front" aria-pressed="false"><span class="tree-n">3</span><span>Front lever beam</span></button></li><li><button type="button" class="tree-item" data-select-part="frontMounts" aria-pressed="false"><span class="tree-n">4</span><span>Front suspension mounts</span></button></li><li><button type="button" class="tree-item" data-select-part="pivot" aria-pressed="false"><span class="tree-n">5</span><span>Pivot plate</span></button></li></ul></li><li><a class="tree-item" href="#status" data-label="Status"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Status</span></a></li></ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  <main id="main" class="doc-main">
+    <header class="doc-head" id="overview">
+      <div>
+        <h1>Torsional rigidity test jig</h1>
+        <p class="doc-sub">Texas A&amp;M Formula SAE EV, chassis subteam · AME26 chassis</p>
+        <p class="doc-lead">As an apprentice on the Texas A&amp;M Formula SAE EV chassis subteam, I designed a test jig that measures how stiff the AME26 chassis is in torsion, so the team can check its FEA against the real frame. The back of the chassis is anchored into concrete. The front sits on a center pivot with long lever arms, so a weight hung on one side twists the chassis with a known torque. I designed it from scratch in SolidWorks, and it’s about to be manufactured.</p>
+      </div>
+      <aside class="facts" aria-label="Project details"><p class="facts-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-props"></use></svg>Properties</p><dl><div><dt>Role</dt><dd>Designer (from scratch)</dd></div><div><dt>Tools</dt><dd>SolidWorks</dd></div><div><dt>Assigned</dt><dd>Mid-September 2026</dd></div><div><dt>Status</dt><dd>Designed, going into fabrication</dd></div></dl></aside>
+    </header>
+    <div class="viewport" id="model" data-viewer="torsion-jig">
+      <div class="vp-stage"><img class="vp-poster" src="../assets/img/torsion-jig.webp" alt="Render of the torsion test jig with a see-through outline of the chassis. The interactive 3D model loads here."></div>
+    </div>
+    <p class="vp-caption">Drag to rotate. Click a part, or turn on Labels, to see what it does. The see-through frame is a deliberately rough outline of the AME26 chassis, there to show where the car sits. The car’s suspension and other team parts aren’t shown.</p>
+
+      <section class="feature" id="purpose" aria-labelledby="purpose-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="purpose-h">Why test it</h2></div>
+        <div class="prose">
+          <p><strong>Torsional stiffness</strong> is how much torque it takes to twist one end of the chassis by one degree relative to the other. It’s one of the main numbers a Formula SAE chassis is designed around, and it’s usually predicted with FEA.</p>
+          <p>An FEA result is only as good as its model: how the joints are represented, the tube properties, and above all the boundary conditions. Twisting the real frame by a known amount is the way to find out whether the model can be trusted.</p>
+        </div>
+      </section>
+      <section class="feature" id="how" aria-labelledby="how-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="how-h">How the jig works</h2></div>
+        <div class="prose">
+          <ul>
+            <li><strong>The rear is held fixed.</strong> A welded steel fixture is anchored into concrete. Its mock uprights, made from water-jetted and welded steel, stand where the rear wheel uprights would be, and the suspension is replaced with rigid parts so the back of the chassis can’t move.</li>
+            <li><strong>The front can only roll.</strong> The front beam rests on a V-shaped pivot at the car’s centerline. Mock uprights on the beam hold the front of the chassis the same way the rear ones do.</li>
+            <li><strong>Weights apply a known torque.</strong> The beam extends past the mock uprights to a post at each end, 1.15 m from the pivot. A weight hung on one post twists the front of the chassis about the pivot with a torque of weight × lever arm.</li>
+            <li><strong>Twist gives the stiffness.</strong> Comparing the applied torque with how far the front rotates relative to the fixed rear gives the torsional stiffness, <em>K = T / θ</em>, which can be compared directly with the FEA prediction.</li>
+          </ul>
+        </div>
+        <div class="readouts">
+          <div class="readout"><b>1.15 m</b><span>lever arm, pivot to weight post</span></div>
+          <div class="readout"><b>≈ 113 N·m</b><span>of torque for every 10 kg hung on one post</span></div>
+          <div class="readout"><b>1.53 m</b><span>between the front and rear mock uprights</span></div>
+        </div>
+      </section>
+      <section class="feature" id="components" aria-labelledby="components-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-folder"></use></svg><h2 id="components-h">Components</h2></div>
+        <div class="table-scroll wide">
+          <table class="iter">
+            <thead><tr><th scope="col">#</th><th scope="col">Component</th><th scope="col">What it does</th><th scope="col" class="col-3d"><span class="sr-only">3D model</span></th></tr></thead>
+            <tbody><tr><td><span class="balloon-num">1</span></td><td>Rear fixture, welded steel</td><td>Anchored into concrete. Holds the back of the chassis still, with triangular mock uprights where the rear wheel uprights would be.</td><td class="col-3d"><button type="button" class="show3d" data-select-part="rear" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Rear fixture in 3D</span></button></td></tr><tr><td><span class="balloon-num">2</span></td><td>Rear suspension mounts</td><td>Water-jetted face plates and clevis tabs on the mock uprights, where the suspension links connect</td><td class="col-3d"><button type="button" class="show3d" data-select-part="rearMounts" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Rear suspension mounts in 3D</span></button></td></tr><tr><td><span class="balloon-num">3</span></td><td>Front lever beam, welded steel</td><td>Rests on a V-shaped center pivot, with weight posts 1.15 m out on each side</td><td class="col-3d"><button type="button" class="show3d" data-select-part="front" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Front lever beam in 3D</span></button></td></tr><tr><td><span class="balloon-num">4</span></td><td>Front suspension mounts</td><td>The same face plates and clevis tabs, on the mock uprights of the lever beam</td><td class="col-3d"><button type="button" class="show3d" data-select-part="frontMounts" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Front suspension mounts in 3D</span></button></td></tr><tr><td><span class="balloon-num">5</span></td><td>Pivot plate</td><td>The plate the V-shaped pivot sits on</td><td class="col-3d"><button type="button" class="show3d" data-select-part="pivot" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Pivot plate in 3D</span></button></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="feature" id="status" aria-labelledby="status-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="status-h">Status and next steps</h2></div>
+        <div class="prose">
+          <p>We were assigned the jig in mid-September. The design is finished and it’s about to be manufactured. Once it’s built, the chassis goes on the jig and the measured stiffness gets compared with the FEA prediction. I’ll add the results here when we have them.</p>
+          <p>This was also my first project in SolidWorks. Before this, I’d used Onshape and Fusion 360.</p>
+        </div>
+      </section>
+
+    <a class="next-doc" href="fsae-brake-pedal.html">
+      <img src="../assets/img/brake-iso.webp" class="plate" alt="" loading="lazy">
+      <span><small>Next project</small><b>Brake pedal assembly</b></span>
+      <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>
+    </a>
+    <footer class="doc-foot">
+      <span>© <span id="year">2026</span> David Dwyer</span>
+      <a href="mailto:davidd22@tamu.edu">davidd22@tamu.edu</a>
+      <a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+    </footer>
+  </main>
+</div>
+
+<nav class="doctabs" aria-label="Pages">
+  <ul>
+    <li><a href="../index.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg>Welcome</a></li><li><a href="../projects/torsion-jig.html" aria-current="page"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-car"></use></svg>Torsion jig</a></li><li><a href="../projects/fsae-brake-pedal.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-car"></use></svg>Brake pedal</a></li><li><a href="../projects/scorpius.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg>Scorpius</a></li><li><a href="../projects/hawkbot.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg>HawkBot</a></li><li><a href="../projects/go-kart.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Go-kart</a></li><li><a href="../projects/eagle-scout.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Eagle Scout</a></li>
+  </ul>
+  <div class="status"><span><span class="dot" aria-hidden="true"></span>Looking for engineering internships</span><span>Mechanical Engineering, Texas A&amp;M</span></div>
+</nav>
+<nav class="mobilebar" aria-label="Quick links">
+  <ul>
+    <li><a href="../index.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg><span>Home</span></a></li>
+    <li><a class="is-resume" href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-resume"></use></svg><span>Résumé</span></a></li>
+    <li><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span>LinkedIn</span></a></li>
+    <li><a href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>Email</span></a></li>
+  </ul>
+</nav>
+<div class="help-pop" id="help-pop" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How to use this site</h2>
+  <ol>
+    <li>On the Home page, click a project to open it.</li>
+    <li>Drag a 3D model to rotate it. To zoom, click inside it first (or hold Ctrl) and scroll, or pinch on a phone.</li>
+    <li>The blue Home button at the top left always brings you back. The tabs along the bottom switch between projects.</li>
+    <li>My résumé, LinkedIn and email are on the right edge of the screen, or along the bottom on a phone.</li>
+  </ol>
+  <button class="btn" type="button" data-help-close>Got it</button>
+</div>
+
+<script src="../js/main.js"></script>
+<script type="module" src="../js/viewer.js"></script>
+</body>
+</html>
