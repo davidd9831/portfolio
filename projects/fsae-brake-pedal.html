@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <!-- For the 3D viewer (see the commented block below the header) -->
   <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4/dist/model-viewer.min.js"></script>
 </head>
 <body>
@@ -45,21 +44,20 @@
   </div>
 </header>
 
-<!-- 3D VIEWER: once assets/models/brake-pedal.glb exists, remove the comment markers around this block.
+<!-- 3D viewer -->
 <div class="wrap">
   <div class="viewer-frame reveal">
-    <model-viewer src="../assets/models/brake-pedal.glb" alt="Interactive 3D model of the brake pedal assembly"
+    <model-viewer src="../assets/models/brake-pedal.glb" orientation="0deg -90deg 0deg" alt="Interactive 3D model of the brake pedal assembly"
       camera-controls auto-rotate rotation-per-second="14deg" shadow-intensity="1" shadow-softness="0.8"
-      environment-image="neutral" exposure="1.05" camera-orbit="-35deg 68deg auto" touch-action="pan-y"
+      environment-image="neutral" exposure="1.05" camera-orbit="-30deg 65deg auto" touch-action="pan-y"
       disable-pan disable-tap min-camera-orbit="auto 20deg auto" max-camera-orbit="auto 100deg auto" tone-mapping="neutral">
     </model-viewer>
     <div class="viewer-bar"><span class="mono">Drag to rotate · Scroll or pinch to zoom</span><span class="mono">Brake pedal assembly</span></div>
   </div>
 </div>
--->
 
 <div class="wrap">
-  <div class="gallery" style="margin-top:0">
+  <div class="gallery" style="margin-top:28px">
     <figure class="w12"><button class="shot plate" style="aspect-ratio:1060/905"><img src="../assets/img/brake-overview.webp" alt="Annotated render of the brake pedal assembly with numbered components" loading="lazy"></button><figcaption>The full assembly. Numbers match the component list below.</figcaption></figure>
   </div>
 </div>
