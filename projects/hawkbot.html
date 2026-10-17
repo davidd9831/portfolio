@@ -4,168 +4,186 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HawkBot — FTC Into the Deep Robot | David Dwyer</title>
-  <meta name="description" content="Design case study: HawkBot, our first fully custom CNC-machined carbon fiber robot chassis.">
-  <meta name="theme-color" content="#f5f5f2">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c1c1e'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ffffff'>DD</text></svg>">
+  <meta name="description" content="Design case study with an interactive 3D model: HawkBot, our first fully custom CNC-machined carbon fiber robot chassis.">
+  <meta property="og:title" content="HawkBot — FTC Into the Deep Robot | David Dwyer">
+  <meta property="og:description" content="Design case study with an interactive 3D model: HawkBot, our first fully custom CNC-machined carbon fiber robot chassis.">
+  <meta property="og:image" content="../assets/img/hawkbot-v2.webp">
+  <meta name="theme-color" content="#e8ebee">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c2126'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ffffff'>DD</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4/dist/model-viewer.min.js"></script>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
+<body class="page-doc">
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h5v-6h3v6h5V9.5"/></symbol><symbol id="i-resume" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15.5h6M9 8.5h2.5"/></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16.5c.6-1.7 1.8-2.6 3.2-2.6s2.6.9 3.2 2.6"/><path d="M14.5 10h4M14.5 13.5h3"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 7 8.5 6.5L20.5 7"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2 1-1.2 1.9v.4"/><path d="M12 16.9v.2"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5.5 5.5"/></symbol><symbol id="i-car" viewBox="0 0 24 24"><path d="M2.5 15.5h2M9.3 15.5h5.9M20 15.5h1.5"/><path d="M3.5 13.2 7 11h3.5l1.6-2.3h2l1.4 2.3h3.6l2.3 2.7"/><circle cx="7" cy="15.5" r="2.3"/><circle cx="17.6" cy="15.5" r="2.3"/></symbol><symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="2"/><path d="M12 5v3"/><circle cx="12" cy="4" r="1"/><circle cx="9.5" cy="12.5" r="1.1"/><circle cx="14.5" cy="12.5" r="1.1"/><path d="M9.5 15.5h5M3 11.5v3.5M21 11.5v3.5"/></symbol><symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.6 4.2a4.6 4.6 0 0 0-4.4 6L4 16.4 7.6 20l6.2-6.2a4.6 4.6 0 0 0 6-4.4l-2.8 2.8-2.6-.6-.6-2.6z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx=".5"/><rect x="13" y="4" width="7" height="7" rx=".5"/><rect x="4" y="13" width="7" height="7" rx=".5"/><rect x="13" y="13" width="7" height="7" rx=".5"/></symbol><symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/><path d="M12 9v6M9 12h6"/></symbol><symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></symbol><symbol id="i-edges" viewBox="0 0 24 24"><path d="M4 8.5 8.5 4H20v11.5L15.5 20H4z"/><path d="M4 8.5h11.5V20M15.5 8.5 20 4"/></symbol><symbol id="i-explode" viewBox="0 0 24 24"><rect x="9.2" y="9.2" width="5.6" height="5.6"/><path d="M4 4l3.2 3.2M20 4l-3.2 3.2M4 20l3.2-3.2M20 20l-3.2-3.2"/><path d="M4 7V4h3M17 4h3v3M20 17v3h-3M7 20H4v-3"/></symbol><symbol id="i-balloon" viewBox="0 0 24 24"><circle cx="14.5" cy="9.5" r="5.5"/><path d="M10.6 13.4 4 20"/><path d="M13.6 8.1 15 7v5"/></symbol><symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol><symbol id="i-collapse" viewBox="0 0 24 24"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></symbol><symbol id="i-chev-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol><symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-assembly" viewBox="0 0 24 24"><path d="M12 3 20 7v4.5l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4M12 11v4.5"/><path d="M4 15.5 12 19.5l8-4"/></symbol><symbol id="i-part" viewBox="0 0 24 24"><path d="M12 4 19.5 8v8L12 20l-7.5-4V8z"/><path d="M4.5 8 12 12l7.5-4M12 12v8"/></symbol><symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2h8.5A1.5 1.5 0 0 1 21 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/></symbol><symbol id="i-section" viewBox="0 0 24 24"><path d="M5.5 3.5h13v17h-13z"/><path d="M8.5 8h7M8.5 11.5h7M8.5 15h4.5"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M8.5 3.5h7l1.8 2.7-1.8 2.8h-7L6.7 6.2z"/><path d="M10 9v11.5h4V9"/><path d="M10 12.5l4-1.2M10 16l4-1.2"/></symbol><symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="1.5"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8.5 6l1.5-2h4l1.5 2"/></symbol><symbol id="i-props" viewBox="0 0 24 24"><path d="M5 3.5h14v17H5z"/><path d="M8 8h2M12.5 8H16M8 12h2M12.5 12H16M8 16h2M12.5 16H16"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></symbol><symbol id="i-mill" viewBox="0 0 24 24"><path d="M9 3h6v4H9z"/><path d="M10 7v8l2 3 2-3V7"/><path d="M10 10.5l4-1.5M10 13.5l4-1.5"/><path d="M4 21h16"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8 8"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol></svg>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="nav">
-  <div class="wrap">
-    <a class="brand" href="../index.html">David Dwyer<span>.</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Menu">Menu</button>
-    <div class="nav-links">
-      <a href="../index.html#fsae">FSAE EV</a>
-      <a href="../index.html#ftc">FTC Robotics</a>
-      <a href="../index.html#other">Other</a>
-      <a href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
-      <a href="../index.html#contact">Contact</a>
-    </div>
-  </div>
-</nav>
-
-<header class="cs-hero">
-  <div class="wrap">
-    <a class="back" href="../index.html#work">← All projects</a>
-    <div class="eyebrow">FIRST Tech Challenge · Into the Deep · 2024–25</div>
-    <h1>HawkBot</h1>
-    <p class="lead">Our team's first fully custom robot. In one season it went from a kit-based prototype to a CNC-machined carbon fiber and polycarbonate machine with separate intake and scoring slide systems, color-sensing intake, and a nacelle-style drivetrain.</p>
-    <dl class="facts">
-      <div><dt class="mono">Role</dt><dd>Design Lead · CAD + Build</dd></div>
-      <div><dt class="mono">Team</dt><dd>3734 Iron Giant (7 members)</dd></div>
-      <div><dt class="mono">Tools</dt><dd>Fusion 360, Onshape, CAM, Blender</dd></div>
-      <div><dt class="mono">Result</dt><dd>1st Place Design Award, 2025</dd></div>
-    </dl>
-  </div>
+<header class="titlebar">
+  <a class="tb-home" href="../index.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg><span>Home</span></a>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html#about">David Dwyer</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li aria-current="page">HawkBot</li>
+    </ol>
+  </nav>
+  <span class="tb-file" title="Document name">hawkbot-v2-3734</span>
+  <button class="icon-btn" type="button" data-help aria-expanded="false" aria-controls="help-pop"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-help"></use></svg><span class="tb-help-label">How to use this site</span></button>
 </header>
 
-<div class="wrap">
-  <div class="viewer-frame reveal">
-    <model-viewer
-      src="../assets/models/hawkbot.glb" orientation="0deg -90deg 0deg"
-      alt="Interactive 3D model of HawkBot"
-      camera-controls auto-rotate rotation-per-second="14deg" shadow-intensity="1" shadow-softness="0.8"
-      environment-image="neutral" exposure="1.1" camera-orbit="35deg 70deg auto" touch-action="pan-y"
-      disable-pan disable-tap min-camera-orbit="auto 20deg auto" max-camera-orbit="auto 100deg auto" tone-mapping="neutral">
-    </model-viewer>
-    <div class="viewer-bar"><span class="mono">Drag to rotate · Scroll or pinch to zoom</span><span class="mono">HawkBot V2 · untextured CAD export</span></div>
-  </div>
+<aside class="taskpane" aria-label="Résumé and contact">
+  <ul>
+    <li><a class="is-resume" href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-resume"></use></svg><span class="tp-label">Résumé (PDF)</span></a></li>
+    <li><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span class="tp-label">LinkedIn</span></a></li>
+    <li><a href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span class="tp-label">Email davidd22@tamu.edu</span></a></li>
+  </ul>
+</aside>
+
+<div class="doc-layout">
+  <button class="sections-toggle" type="button" aria-expanded="false" aria-controls="doc-tree"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg><span>Sections</span><span class="current">Overview</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-chev-down"></use></svg></button>
+  <div class="tree" id="doc-tree">
+      <p class="tree-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>Contents</p>
+      <nav aria-label="Sections of this page">
+        <ul>
+          <li><a class="tree-item tree-root" href="#overview" data-label="Overview"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-assembly"></use></svg><span>hawkbot-v2-3734</span></a>
+            <ul><li><a class="tree-item" href="#overview" data-label="Overview"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Overview</span></a></li><li><a class="tree-item" href="#model" data-label="3D model"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg><span>3D model</span></a></li><li><a class="tree-item" href="#challenge" data-label="The challenge"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>The challenge</span></a></li><li><a class="tree-item" href="#iteration" data-label="Three robots in one season"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Three robots in one season</span></a></li><li><a class="tree-item" href="#chassis" data-label="Nacelle drivetrain"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-part"></use></svg><span>Nacelle drivetrain</span></a></li><li><a class="tree-item" href="#problems" data-label="What broke"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>What broke</span></a></li><li><a class="tree-item" href="#results" data-label="Outcome"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Outcome</span></a></li></ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  <main id="main" class="doc-main">
+    <header class="doc-head" id="overview">
+      <div>
+        <h1>HawkBot</h1>
+        <p class="doc-sub">FIRST Tech Challenge, Into the Deep season, 2024–25</p>
+        <p class="doc-lead">Our team’s first fully custom robot. In one season it went from a kit-based prototype to a CNC-machined carbon fiber and polycarbonate machine with separate intake and scoring slide systems, color-sensing intake, and a nacelle-style drivetrain.</p>
+      </div>
+      <aside class="facts" aria-label="Project details"><p class="facts-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-props"></use></svg>Properties</p><dl><div><dt>Role</dt><dd>Design Lead · CAD + Build</dd></div><div><dt>Team</dt><dd>3734 Iron Giant (7 members)</dd></div><div><dt>Tools</dt><dd>Fusion 360, Onshape, CAM, Blender</dd></div><div><dt>Result</dt><dd>1st Place Design Award, 2025</dd></div></dl></aside>
+    </header>
+    <div class="viewport" id="model" data-viewer="hawkbot">
+      <div class="vp-stage"><img class="vp-poster is-photo" src="../assets/img/hawkbot-v2.webp" alt="Render of HawkBot. The interactive 3D model loads here."></div>
+    </div>
+    <p class="vp-caption">HawkBot V2, untextured CAD export. Drag to rotate; right-drag to pan.</p>
+
+      <section class="feature" id="challenge" aria-labelledby="challenge-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="challenge-h">The challenge</h2></div>
+        <div class="prose">
+          <p>Iron Giant is a feeder team: most members are rookies each year. This season most of the team was new to FTC. The game asked robots to collect “samples” from a central submersible. Robots could either drop samples into a high basket or clip them onto a high bar as “specimens,” and fast cycles decided matches.</p>
+          <p>Previous robots were built on REV aluminum extrusion kits. We had three season goals for the design side:</p>
+          <ul>
+            <li>Design a <strong>custom chassis</strong> with CNC-milled carbon fiber and 3D-printed parts</li>
+            <li>Make it <strong>fast, low-profile, and built for this specific game</strong>, with odometry pods for accurate position tracking</li>
+            <li>Teach rookies the full design process, from CAD and CAM to manufacturing and testing</li>
+          </ul>
+        </div>
+      </section>
+      <section class="feature" id="iteration" aria-labelledby="iteration-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="iteration-h">Three robots in one season</h2></div>
+        <div class="table-scroll wide">
+          <table class="iter">
+            <thead><tr><th scope="col">Version</th><th scope="col">Design</th><th scope="col">What we learned</th></tr></thead>
+            <tbody>
+              <tr><td>V1</td><td>Kit chassis, one linear slide on a shoulder joint (250° range), rotating claw intake</td><td>Quick to build and good for testing ideas, but the intake was unreliable and cycles were slow</td></tr>
+              <tr><td>V1.5</td><td>Drivetrain V2, custom shoulder joint (280°), claw intake V2</td><td>Much faster and a more reliable arm, but the arm joint was still a bottleneck</td></tr>
+              <tr><td>V2</td><td>Custom carbon fiber/polycarbonate chassis, 3-stage vertical slides, 2-stage horizontal slides, beater intake with color sensors, transfer tray, shoulder-mounted claw</td><td>Fastest intake and most reliable scoring, but more complex to code and drive</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="gallery"><figure class="w6"><button type="button" class="shot "><img src="../assets/img/hawkbot-v1.webp" alt="HawkBot V1 render" loading="lazy"></button><figcaption>V1: prototype with a shoulder-mounted slide</figcaption></figure><figure class="w6"><button type="button" class="shot "><img src="../assets/img/hawkbot-v2.webp" alt="HawkBot V1.5 render" loading="lazy"></button><figcaption>V1.5: custom carbon fiber plates and the new drivetrain</figcaption></figure></div>
+      </section>
+      <section class="feature" id="chassis" aria-labelledby="chassis-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-part"></use></svg><h2 id="chassis-h">The nacelle drivetrain</h2></div>
+        <div class="prose">
+          <p>As CAD lead, I spent the summer designing a <strong>Drivetrain V0</strong> (about 40 hours of CAD) to move the team from extrusion kits to a custom chassis. I refined it through hundreds of messages with our sister team, our mentor, FTC’s North Texas program coordinator, and the international FTC community on Discord. It wasn’t built that season because we couldn’t afford it yet, but it led directly to V2.</p>
+          <p><strong>Drivetrain V2</strong> puts each pair of mecanum wheels in a carbon fiber and polycarbonate <strong>nacelle</strong>. The nacelles:</p>
+          <ul>
+            <li>contain the drivetrain parts so they can be serviced separately</li>
+            <li>each hold an odometry pod for accurate position tracking</li>
+            <li>raise the robot and shield the wheels so it doesn’t accidentally push samples around</li>
+          </ul>
+          <p>The robot uses more than 400 cm² of carbon fiber and polycarbonate panels, and it has more custom parts than off-the-shelf ones. The downsides were cost, long manufacturing time, and less reuse between seasons. Our sponsorship (below) paid for it.</p>
+        </div>
+        <div class="media-row">
+          <figure><div class="video-frame"><video autoplay muted loop playsinline preload="metadata" poster="../assets/img/hawkbot-turntable-poster.webp"><source src="../assets/video/hawkbot-turntable.mp4" type="video/mp4"></video></div><figcaption>Turntable render</figcaption></figure>
+          <figure><div class="video-frame"><video controls muted playsinline preload="none" poster="../assets/img/cnc-carbon-fiber-timelapse-poster.webp"><source src="../assets/video/cnc-carbon-fiber-timelapse.mp4" type="video/mp4"></video></div><figcaption>Time-lapse of CNC-milling our carbon fiber plates</figcaption></figure>
+        </div>
+      </section>
+      <section class="feature" id="problems" aria-labelledby="problems-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="problems-h">What broke, and how we fixed it</h2></div>
+        <div class="prose">
+          <p><strong>Beater intake.</strong> We replaced the claw intake with surgical-tubing beaters driven by a 9:1 UltraPlanetary motor. Two REV color sensors let it reject wrong-color samples and keep the right ones, capturing a sample in 0.5 to 3 seconds. Timing belts funnel the sample back into a transfer tray.</p>
+        </div>
+        <div class="table-scroll wide">
+          <table class="iter">
+            <thead><tr><th scope="col">Problem</th><th scope="col">Root cause</th><th scope="col">Fix</th></tr></thead>
+            <tbody>
+              <tr><td>Claw broke</td><td>Rack-and-pinion gears stripped and placement had to be very precise</td><td>Pyramid-pattern gripper that works even when placement is imprecise</td></tr>
+              <tr><td>Weak grip</td><td>Not enough contact area or friction on the sample</td><td>Grippers shaped to fit the sample, coated with rubber cement</td></tr>
+              <tr><td>Belt skipping</td><td>CAM/CNC errors put holes in the wrong places</td><td>Adapters that use the existing holes to mount an idler pulley for tension</td></tr>
+              <tr><td>Servo stalling</td><td>Intake motor mounted high above the pivot made the intake top-heavy</td><td>Elastic bands from a rear support beam to counterbalance the load</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <p>The belt-tension issue taught me a lesson I still use: <strong>design in adjustment</strong>. Every drivetrain and belt I’ve designed since has tensioning slots.</p>
+        </div>
+      </section>
+      <section class="feature" id="results" aria-labelledby="results-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="results-h">Outcome</h2></div>
+        <div class="readouts" style="margin-top:0">
+          <div class="readout"><b>~200 hrs</b><span>of CAD on the robot</span></div>
+          <div class="readout"><b>83 pts</b><span>average score with the specimen strategy (vs. 43 with samples)</span></div>
+          <div class="readout"><b>$2,825</b><span>from Southwest Airlines, which fully funded V2</span></div>
+        </div>
+        <div class="prose">
+          <p>We compared the two scoring strategies with match data and chose specimen scoring, which almost doubled our average. Southwest’s support came with real engineering management lessons: a <strong>phase-based budget</strong> (chassis first, then subsystems), timelines required for continued funding, and design reviews that pushed us to balance new ideas against what we could actually build.</p>
+        </div>
+        <div class="gallery"><figure class="w6"><button type="button" class="shot wide"><img src="../assets/img/hawkbot-render-1.webp" alt="HawkBot front render" loading="lazy"></button><figcaption>Render: front view</figcaption></figure><figure class="w6"><button type="button" class="shot wide"><img src="../assets/img/hawkbot-render-2.webp" alt="HawkBot angled render" loading="lazy"></button><figcaption>Render: three-quarter view</figcaption></figure></div>
+      </section>
+
+    <a class="next-doc" href="go-kart.html">
+      <img src="../assets/img/kart-1.webp" alt="" loading="lazy">
+      <span><small>Next project</small><b>Custom go-kart, built to 50 mph</b></span>
+      <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>
+    </a>
+    <footer class="doc-foot">
+      <span>© <span id="year">2026</span> David Dwyer</span>
+      <a href="mailto:davidd22@tamu.edu">davidd22@tamu.edu</a>
+      <a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+    </footer>
+  </main>
 </div>
 
-<section class="cs-section" style="margin-top:72px">
-  <div class="wrap cs-grid">
-    <header><span class="mono">01 · Context</span><h2>The challenge</h2></header>
-    <div class="prose">
-      <p>Iron Giant is a feeder team: most members are rookies each year. This season most of the team was new to FTC. The game asked robots to collect "samples" from a central submersible. Robots could either drop samples into a high basket or clip them onto a high bar as "specimens," and fast cycles decided matches.</p>
-      <p>Previous robots were built on REV aluminum extrusion kits. We had three season goals for the design side:</p>
-      <ul>
-        <li>Design a <strong>custom chassis</strong> with CNC-milled carbon fiber and 3D-printed parts</li>
-        <li>Make it <strong>fast, low-profile, and built for this specific game</strong>, with odometry pods for accurate position tracking</li>
-        <li>Teach rookies the full design process, from CAD and CAM to manufacturing and testing</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section">
-  <div class="wrap cs-grid">
-    <header><span class="mono">02 · Iteration</span><h2>Three robots in one season</h2></header>
-    <div class="prose">
-      <div class="table-scroll">
-      <table class="iter">
-        <thead><tr><th>Version</th><th>Design</th><th>What we learned</th></tr></thead>
-        <tbody>
-          <tr><td>V1</td><td>Kit chassis, one linear slide on a shoulder joint (250° range), rotating claw intake</td><td>Quick to build and good for testing ideas, but the intake was unreliable and cycles were slow</td></tr>
-          <tr><td>V1.5</td><td>Drivetrain V2, custom shoulder joint (280°), claw intake V2</td><td>Much faster and a more reliable arm, but the arm joint was still a bottleneck</td></tr>
-          <tr><td>V2</td><td>Custom carbon fiber/polycarbonate chassis, 3-stage vertical slides, 2-stage horizontal slides, beater intake with color sensors, transfer tray, shoulder-mounted claw</td><td>Fastest intake and most reliable scoring, but more complex to code and drive</td></tr>
-        </tbody>
-      </table>
-      </div>
-      <div class="gallery">
-        <figure class="w6"><button class="shot"><img src="../assets/img/hawkbot-v1.webp" alt="HawkBot V1 render" loading="lazy"></button><figcaption>V1: prototype with a shoulder-mounted slide</figcaption></figure>
-        <figure class="w6"><button class="shot"><img src="../assets/img/hawkbot-v2.webp" alt="HawkBot V1.5 render" loading="lazy"></button><figcaption>V1.5: custom carbon fiber plates and the new drivetrain</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section">
-  <div class="wrap cs-grid">
-    <header><span class="mono">03 · Chassis</span><h2>The nacelle drivetrain</h2></header>
-    <div class="prose">
-      <p>As CAD lead, I spent the summer designing a <strong>Drivetrain V0</strong> (about 40 hours of CAD) to move the team from extrusion kits to a custom chassis. I refined it through hundreds of messages with our sister team, our mentor, FTC's North Texas program coordinator, and the international FTC community on Discord. It wasn't built that season because we couldn't afford it yet, but it led directly to V2.</p>
-      <p><strong>Drivetrain V2</strong> puts each pair of mecanum wheels in a carbon fiber and polycarbonate <strong>nacelle</strong>. The nacelles:</p>
-      <ul>
-        <li>contain the drivetrain parts so they can be serviced separately</li>
-        <li>each hold an odometry pod for accurate position tracking</li>
-        <li>raise the robot and shield the wheels so it doesn't accidentally push samples around</li>
-      </ul>
-      <p>The robot uses more than 400 cm² of carbon fiber and polycarbonate panels, and it has more custom parts than off-the-shelf ones. The downsides were cost, long manufacturing time, and less reuse between seasons. Our sponsorship (below) paid for it.</p>
-      <div class="media-row">
-        <figure><div class="video-frame"><video autoplay muted loop playsinline preload="metadata" poster="../assets/img/hawkbot-turntable-poster.webp"><source src="../assets/video/hawkbot-turntable.mp4" type="video/mp4"></video></div><figcaption>Turntable render</figcaption></figure>
-        <figure><div class="video-frame"><video controls muted playsinline preload="none" poster="../assets/img/cnc-carbon-fiber-timelapse-poster.webp"><source src="../assets/video/cnc-carbon-fiber-timelapse.mp4" type="video/mp4"></video></div><figcaption>Time-lapse of CNC-milling our carbon fiber plates</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section">
-  <div class="wrap cs-grid">
-    <header><span class="mono">04 · Problem solving</span><h2>What broke, and how we fixed it</h2></header>
-    <div class="prose">
-      <p><strong>Beater intake.</strong> We replaced the claw intake with surgical-tubing beaters driven by a 9:1 UltraPlanetary motor. Two REV color sensors let it reject wrong-color samples and keep the right ones, capturing a sample in 0.5 to 3 seconds. Timing belts funnel the sample back into a transfer tray.</p>
-      <div class="table-scroll">
-      <table class="iter">
-        <thead><tr><th>Problem</th><th>Root cause</th><th>Fix</th></tr></thead>
-        <tbody>
-          <tr><td>Claw broke</td><td>Rack-and-pinion gears stripped and placement had to be very precise</td><td>Pyramid-pattern gripper that works even when placement is imprecise</td></tr>
-          <tr><td>Weak grip</td><td>Not enough contact area or friction on the sample</td><td>Grippers shaped to fit the sample, coated with rubber cement</td></tr>
-          <tr><td>Belt skipping</td><td>CAM/CNC errors put holes in the wrong places</td><td>Adapters that use the existing holes to mount an idler pulley for tension</td></tr>
-          <tr><td>Servo stalling</td><td>Intake motor mounted high above the pivot made the intake top-heavy</td><td>Elastic bands from a rear support beam to counterbalance the load</td></tr>
-        </tbody>
-      </table>
-      </div>
-      <p>The belt-tension issue taught me a lesson I still use: <strong>design in adjustment</strong>. Every drivetrain and belt I've designed since has tensioning slots.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section">
-  <div class="wrap cs-grid">
-    <header><span class="mono">05 · Results</span><h2>Outcome</h2></header>
-    <div class="prose">
-      <div class="callouts" style="margin-top:0">
-        <div class="callout"><b>~200 hrs</b><span>of CAD on the robot</span></div>
-        <div class="callout"><b>83 pts</b><span>average score with the specimen strategy (vs. 43 with samples)</span></div>
-        <div class="callout"><b>$2,825</b><span>from Southwest Airlines, which fully funded V2</span></div>
-      </div>
-      <p>We compared the two scoring strategies with match data and chose specimen scoring, which almost doubled our average. Southwest's support came with real engineering management lessons: a <strong>phase-based budget</strong> (chassis first, then subsystems), timelines required for continued funding, and design reviews that pushed us to balance new ideas against what we could actually build.</p>
-      <div class="gallery">
-        <figure class="w6"><button class="shot wide"><img src="../assets/img/hawkbot-render-1.webp" alt="HawkBot front render" loading="lazy"></button><figcaption>Render: front view</figcaption></figure>
-        <figure class="w6"><button class="shot wide"><img src="../assets/img/hawkbot-render-2.webp" alt="HawkBot angled render" loading="lazy"></button><figcaption>Render: three-quarter view</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap">
-  <a class="next-project" href="go-kart.html">
-    <div><span class="mono muted">Next project</span><h3>Custom go-kart</h3></div>
-    <span class="btn">→</span>
-  </a>
+<nav class="doctabs" aria-label="Pages">
+  <ul>
+    <li><a href="../index.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg>Welcome</a></li><li><a href="../projects/fsae-brake-pedal.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-car"></use></svg>Brake pedal</a></li><li><a href="../projects/scorpius.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg>Scorpius</a></li><li><a href="../projects/hawkbot.html" aria-current="page"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg>HawkBot</a></li><li><a href="../projects/go-kart.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Go-kart</a></li><li><a href="../projects/eagle-scout.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Eagle Scout</a></li>
+  </ul>
+  <div class="status"><span><span class="dot" aria-hidden="true"></span>Looking for engineering internships</span><span>Mechanical Engineering, Texas A&amp;M</span></div>
+</nav>
+<nav class="mobilebar" aria-label="Quick links">
+  <ul>
+    <li><a href="../index.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg><span>Home</span></a></li>
+    <li><a class="is-resume" href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-resume"></use></svg><span>Résumé</span></a></li>
+    <li><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span>LinkedIn</span></a></li>
+    <li><a href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>Email</span></a></li>
+  </ul>
+</nav>
+<div class="help-pop" id="help-pop" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How to use this site</h2>
+  <ol>
+    <li>On the Home page, click a project to open it.</li>
+    <li>Drag a 3D model to rotate it. To zoom, click inside it first (or hold Ctrl) and scroll, or pinch on a phone.</li>
+    <li>The blue Home button at the top left always brings you back. The tabs along the bottom switch between projects.</li>
+    <li>My résumé, LinkedIn and email are on the right edge of the screen, or along the bottom on a phone.</li>
+  </ol>
+  <button class="btn" type="button" data-help-close>Got it</button>
 </div>
 
-<footer>
-  <div class="wrap">
-    <span>© <span id="year">2026</span> David Dwyer</span>
-    <a href="mailto:davidd22@tamu.edu">davidd22@tamu.edu</a>
-  </div>
-</footer>
 <script src="../js/main.js"></script>
+<script type="module" src="../js/viewer.js"></script>
 </body>
 </html>

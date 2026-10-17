@@ -4,217 +4,217 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Brake Pedal Assembly — Texas A&amp;M FSAE EV | David Dwyer</title>
-  <meta name="description" content="Design case study: a floor-pivot steel brake pedal assembly with a slotted balance-bar linkage, twin master cylinders, over-travel stop, BOTS and pressure sensing, checked with FEA at 2,000 N.">
-  <meta name="theme-color" content="#f5f5f2">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c1c1e'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ffffff'>DD</text></svg>">
+  <meta name="description" content="Design case study with an interactive 3D model: a floor-pivot steel brake pedal assembly with a slotted balance-bar linkage, twin master cylinders, over-travel stop, BOTS and pressure sensing, checked with FEA at 2,000 N.">
+  <meta property="og:title" content="Brake Pedal Assembly — Texas A&amp;M FSAE EV | David Dwyer">
+  <meta property="og:description" content="Design case study with an interactive 3D model: a floor-pivot steel brake pedal assembly with a slotted balance-bar linkage, twin master cylinders, over-travel stop, BOTS and pressure sensing, checked with FEA at 2,000 N.">
+  <meta property="og:image" content="../assets/img/brake-iso.webp">
+  <meta name="theme-color" content="#e8ebee">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c2126'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ffffff'>DD</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4/dist/model-viewer.min.js"></script>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
+<body class="page-doc">
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h5v-6h3v6h5V9.5"/></symbol><symbol id="i-resume" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15.5h6M9 8.5h2.5"/></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16.5c.6-1.7 1.8-2.6 3.2-2.6s2.6.9 3.2 2.6"/><path d="M14.5 10h4M14.5 13.5h3"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 7 8.5 6.5L20.5 7"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2 1-1.2 1.9v.4"/><path d="M12 16.9v.2"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5.5 5.5"/></symbol><symbol id="i-car" viewBox="0 0 24 24"><path d="M2.5 15.5h2M9.3 15.5h5.9M20 15.5h1.5"/><path d="M3.5 13.2 7 11h3.5l1.6-2.3h2l1.4 2.3h3.6l2.3 2.7"/><circle cx="7" cy="15.5" r="2.3"/><circle cx="17.6" cy="15.5" r="2.3"/></symbol><symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="2"/><path d="M12 5v3"/><circle cx="12" cy="4" r="1"/><circle cx="9.5" cy="12.5" r="1.1"/><circle cx="14.5" cy="12.5" r="1.1"/><path d="M9.5 15.5h5M3 11.5v3.5M21 11.5v3.5"/></symbol><symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.6 4.2a4.6 4.6 0 0 0-4.4 6L4 16.4 7.6 20l6.2-6.2a4.6 4.6 0 0 0 6-4.4l-2.8 2.8-2.6-.6-.6-2.6z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx=".5"/><rect x="13" y="4" width="7" height="7" rx=".5"/><rect x="4" y="13" width="7" height="7" rx=".5"/><rect x="13" y="13" width="7" height="7" rx=".5"/></symbol><symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/><path d="M12 9v6M9 12h6"/></symbol><symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></symbol><symbol id="i-edges" viewBox="0 0 24 24"><path d="M4 8.5 8.5 4H20v11.5L15.5 20H4z"/><path d="M4 8.5h11.5V20M15.5 8.5 20 4"/></symbol><symbol id="i-explode" viewBox="0 0 24 24"><rect x="9.2" y="9.2" width="5.6" height="5.6"/><path d="M4 4l3.2 3.2M20 4l-3.2 3.2M4 20l3.2-3.2M20 20l-3.2-3.2"/><path d="M4 7V4h3M17 4h3v3M20 17v3h-3M7 20H4v-3"/></symbol><symbol id="i-balloon" viewBox="0 0 24 24"><circle cx="14.5" cy="9.5" r="5.5"/><path d="M10.6 13.4 4 20"/><path d="M13.6 8.1 15 7v5"/></symbol><symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol><symbol id="i-collapse" viewBox="0 0 24 24"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></symbol><symbol id="i-chev-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol><symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-assembly" viewBox="0 0 24 24"><path d="M12 3 20 7v4.5l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4M12 11v4.5"/><path d="M4 15.5 12 19.5l8-4"/></symbol><symbol id="i-part" viewBox="0 0 24 24"><path d="M12 4 19.5 8v8L12 20l-7.5-4V8z"/><path d="M4.5 8 12 12l7.5-4M12 12v8"/></symbol><symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2h8.5A1.5 1.5 0 0 1 21 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/></symbol><symbol id="i-section" viewBox="0 0 24 24"><path d="M5.5 3.5h13v17h-13z"/><path d="M8.5 8h7M8.5 11.5h7M8.5 15h4.5"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M8.5 3.5h7l1.8 2.7-1.8 2.8h-7L6.7 6.2z"/><path d="M10 9v11.5h4V9"/><path d="M10 12.5l4-1.2M10 16l4-1.2"/></symbol><symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="1.5"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8.5 6l1.5-2h4l1.5 2"/></symbol><symbol id="i-props" viewBox="0 0 24 24"><path d="M5 3.5h14v17H5z"/><path d="M8 8h2M12.5 8H16M8 12h2M12.5 12H16M8 16h2M12.5 16H16"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></symbol><symbol id="i-mill" viewBox="0 0 24 24"><path d="M9 3h6v4H9z"/><path d="M10 7v8l2 3 2-3V7"/><path d="M10 10.5l4-1.5M10 13.5l4-1.5"/><path d="M4 21h16"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8 8"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol></svg>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="nav">
-  <div class="wrap">
-    <a class="brand" href="../index.html">David Dwyer<span>.</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Menu">Menu</button>
-    <div class="nav-links">
-      <a href="../index.html#fsae">FSAE EV</a>
-      <a href="../index.html#ftc">FTC Robotics</a>
-      <a href="../index.html#other">Other</a>
-      <a href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
-      <a href="../index.html#contact">Contact</a>
-    </div>
-  </div>
-</nav>
-
-<header class="cs-hero">
-  <div class="wrap">
-    <a class="back" href="../index.html#fsae">← All projects</a>
-    <div class="eyebrow">Texas A&amp;M Formula SAE EV · Chassis subteam design challenge</div>
-    <h1>Brake pedal assembly</h1>
-    <p class="lead">As part of applying to the Texas A&amp;M Formula SAE EV chassis subteam, I designed a complete brake pedal assembly. It uses a machined steel pedal on a floor pivot, a balance bar that slides in a slot in the pedal to drive twin master cylinders, a mechanical over-travel stop, a brake over-travel switch (BOTS), and a line-pressure sensor for the brake system plausibility device (BSPD).</p>
-    <dl class="facts">
-      <div><dt class="mono">Role</dt><dd>Designer (individual challenge)</dd></div>
-      <div><dt class="mono">Tools</dt><dd>Fusion 360 CAD + FEA</dd></div>
-      <div><dt class="mono">Design load</dt><dd>2,000 N on the pedal pad</dd></div>
-      <div><dt class="mono">Pedal ratio</dt><dd>~6 : 1</dd></div>
-    </dl>
-  </div>
+<header class="titlebar">
+  <a class="tb-home" href="../index.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg><span>Home</span></a>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html#about">David Dwyer</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li aria-current="page">Brake pedal</li>
+    </ol>
+  </nav>
+  <span class="tb-file" title="Document name">brake-assembly-v2</span>
+  <button class="icon-btn" type="button" data-help aria-expanded="false" aria-controls="help-pop"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-help"></use></svg><span class="tb-help-label">How to use this site</span></button>
 </header>
 
-<!-- 3D viewer -->
-<div class="wrap">
-  <div class="viewer-frame reveal">
-    <model-viewer src="../assets/models/brake-pedal.glb" orientation="0deg -90deg 0deg" alt="Interactive 3D model of the brake pedal assembly"
-      camera-controls auto-rotate rotation-per-second="14deg" shadow-intensity="1" shadow-softness="0.8"
-      environment-image="neutral" exposure="1.05" camera-orbit="-30deg 65deg auto" touch-action="pan-y"
-      disable-pan disable-tap min-camera-orbit="auto 20deg auto" max-camera-orbit="auto 100deg auto" tone-mapping="neutral">
-    </model-viewer>
-    <div class="viewer-bar"><span class="mono">Drag to rotate · Scroll or pinch to zoom</span><span class="mono">Brake pedal assembly</span></div>
-  </div>
+<aside class="taskpane" aria-label="Résumé and contact">
+  <ul>
+    <li><a class="is-resume" href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-resume"></use></svg><span class="tp-label">Résumé (PDF)</span></a></li>
+    <li><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span class="tp-label">LinkedIn</span></a></li>
+    <li><a href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span class="tp-label">Email davidd22@tamu.edu</span></a></li>
+  </ul>
+</aside>
+
+<div class="doc-layout">
+  <button class="sections-toggle" type="button" aria-expanded="false" aria-controls="doc-tree"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg><span>Sections</span><span class="current">Overview</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-chev-down"></use></svg></button>
+  <div class="tree" id="doc-tree">
+      <p class="tree-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>Contents</p>
+      <nav aria-label="Sections of this page">
+        <ul>
+          <li><a class="tree-item tree-root" href="#overview" data-label="Overview"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-assembly"></use></svg><span>brake-assembly-v2</span></a>
+            <ul><li><a class="tree-item" href="#overview" data-label="Overview"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Overview</span></a></li><li><a class="tree-item" href="#model" data-label="3D model"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg><span>3D model</span></a></li><li><a class="tree-item" href="#requirements" data-label="Requirements"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Requirements</span></a></li><li><div class="tree-row"><button type="button" class="tree-caret needs-viewer" aria-expanded="true" aria-controls="tree-components" aria-label="Show or hide the parts list"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-chev-down"></use></svg></button><a class="tree-item" href="#components" data-label="Components"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-folder"></use></svg><span>Components</span><span class="tree-sub"></span></a></div>
+            <ul id="tree-components" class="needs-viewer"><li><button type="button" class="tree-item" data-select-part="arm" aria-pressed="false"><span class="tree-n">1</span><span>Pedal arm</span></button></li><li><button type="button" class="tree-item" data-select-part="pad" aria-pressed="false"><span class="tree-n">2</span><span>Toe pad</span></button></li><li><button type="button" class="tree-item" data-select-part="bar" aria-pressed="false"><span class="tree-n">3</span><span>Balance bar</span></button></li><li><button type="button" class="tree-item" data-select-part="mc" aria-pressed="false"><span class="tree-n">4</span><span>Master cylinders</span></button></li><li><button type="button" class="tree-item" data-select-part="stop" aria-pressed="false"><span class="tree-n">5</span><span>Over-travel stop</span></button></li><li><button type="button" class="tree-item" data-select-part="bots" aria-pressed="false"><span class="tree-n">6</span><span>BOTS switch</span></button></li><li><button type="button" class="tree-item" data-select-part="sensor" aria-pressed="false"><span class="tree-n">7</span><span>Pressure sensor</span></button></li><li><button type="button" class="tree-item" data-select-part="plate" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-part"></use></svg><span>Mounting plate</span></button></li><li><button type="button" class="tree-item" data-select-part="bracket" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-part"></use></svg><span>BOTS switch bracket</span></button></li><li><button type="button" class="tree-item" data-select-part="hardware" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-bolt"></use></svg><span>Hardware</span><span class="tree-sub">30</span></button></li></ul></li><li><a class="tree-item" href="#kinematics" data-label="Pedal positions"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Pedal positions</span></a></li><li><a class="tree-item" href="#safety" data-label="Shutdown & sensing"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Shutdown & sensing</span></a></li><li><a class="tree-item" href="#fea" data-label="FEA at 2,000 N"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>FEA at 2,000 N</span></a></li><li><a class="tree-item" href="#reflection" data-label="Reflection"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><span>Reflection</span></a></li></ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  <main id="main" class="doc-main">
+    <header class="doc-head" id="overview">
+      <div>
+        <h1>Brake pedal assembly</h1>
+        <p class="doc-sub">Texas A&amp;M Formula SAE EV, chassis subteam design challenge</p>
+        <p class="doc-lead">As part of applying to the Texas A&amp;M Formula SAE EV chassis subteam, I designed a complete brake pedal assembly. It uses a machined steel pedal on a floor pivot, a balance bar that slides in a slot in the pedal to drive twin master cylinders, a mechanical over-travel stop, a brake over-travel switch (BOTS), and a line-pressure sensor for the brake system plausibility device (BSPD).</p>
+      </div>
+      <aside class="facts" aria-label="Project details"><p class="facts-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-props"></use></svg>Properties</p><dl><div><dt>Role</dt><dd>Designer (individual challenge)</dd></div><div><dt>Tools</dt><dd>Fusion 360 CAD + FEA</dd></div><div><dt>Design load</dt><dd>2,000 N on the pedal pad</dd></div><div><dt>Pedal ratio</dt><dd>~6 : 1</dd></div></dl></aside>
+    </header>
+    <div class="viewport" id="model" data-viewer="brake-pedal">
+      <div class="vp-stage"><img class="vp-poster" src="../assets/img/brake-iso.webp" alt="Render of the brake pedal assembly. The interactive 3D model loads here."></div>
+    </div>
+    <p class="vp-caption">Drag to rotate. Click a part, or turn on Labels, to see what it does. Press Play, or pick a numbered position, to move the pedal the way it moves in the CAD model.</p>
+
+      <section class="feature" id="requirements" aria-labelledby="requirements-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="requirements-h">What the pedal has to do</h2></div>
+        <div class="prose">
+          <p>A brake pedal has two separate requirements that are easy to mix up:</p>
+          <ul>
+            <li><strong>Structural:</strong> the pedal and its mounts must survive a <strong>2,000 N</strong> force on the pad without failing. That’s the Formula SAE rules load, far more than a driver normally applies.</li>
+            <li><strong>Functional:</strong> a driver must be able to lock the brakes with a comfortable leg force, within a pedal stroke that feels firm and consistent.</li>
+          </ul>
+          <p>On top of that, an EV has safety and sensing requirements that tie the pedal into the car’s electronics:</p>
+          <ul>
+            <li><strong>Two independent hydraulic circuits</strong> (front and rear), so one failure can’t take out all braking</li>
+            <li>A <strong>brake over-travel switch (BOTS)</strong> that opens the shutdown circuit if the pedal travels too far, which would mean a hydraulic failure</li>
+            <li><strong>Brake pressure sensing</strong> for the BSPD, which cuts motor power if the driver brakes hard while the car is still under power</li>
+          </ul>
+        </div>
+      </section>
+      <section class="feature" id="components" aria-labelledby="components-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-folder"></use></svg><h2 id="components-h">Components</h2></div>
+        <div class="gallery"><figure class="w12"><button type="button" class="shot plate" style="aspect-ratio:1060/912"><img src="../assets/img/brake-overview.webp" alt="Annotated render of the brake pedal assembly with numbered components" loading="lazy"></button><figcaption>The full assembly. Numbers match the component list below.</figcaption></figure></div>
+        <div class="table-scroll wide">
+          <table class="iter">
+            <thead><tr><th scope="col">#</th><th scope="col">Component</th><th scope="col">Why it’s there</th><th scope="col" class="col-3d"><span class="sr-only">3D model</span></th></tr></thead>
+            <tbody><tr><td><span class="balloon-num">1</span></td><td>Machined pedal arm, 4130 steel</td><td>Floor pivot in double shear. A slot near the pivot drives the master cylinders at a ~6:1 pedal ratio.</td><td class="col-3d"><button type="button" class="show3d" data-select-part="arm" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Machined pedal arm in 3D</span></button></td></tr><tr><td><span class="balloon-num">2</span></td><td>Bolted toe pad</td><td>A separate part, so it can be replaced as it wears or moved for driver fit without remaking the pedal</td><td class="col-3d"><button type="button" class="show3d" data-select-part="pad" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Bolted toe pad in 3D</span></button></td></tr><tr><td><span class="balloon-num">3</span></td><td>Balance bar (Tilton 600-Series)</td><td>Splits force between front and rear circuits. Its spherical bearing rides in the pedal slot.</td><td class="col-3d"><button type="button" class="show3d" data-select-part="bar" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Balance bar in 3D</span></button></td></tr><tr><td><span class="balloon-num">4</span></td><td>Twin master cylinders (Tilton 75-Series)</td><td>One for the front brakes and one for the rear, giving two independent circuits</td><td class="col-3d"><button type="button" class="show3d" data-select-part="mc" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Twin master cylinders in 3D</span></button></td></tr><tr><td><span class="balloon-num">5</span></td><td>Mechanical over-travel stop, 4130 steel</td><td>A hard stop that takes the load into the base plate so the master cylinders are never overloaded</td><td class="col-3d"><button type="button" class="show3d" data-select-part="stop" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Mechanical over-travel stop in 3D</span></button></td></tr><tr><td><span class="balloon-num">6</span></td><td>BOTS switch (Honeywell 2T1-6)</td><td>A mechanical double-pole toggle switch tripped directly by the pedal arm</td><td class="col-3d"><button type="button" class="show3d" data-select-part="bots" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> BOTS switch in 3D</span></button></td></tr><tr><td><span class="balloon-num">7</span></td><td>Line-pressure sensor (Texense FPS-V2)</td><td>Measures brake pressure for the BSPD</td><td class="col-3d"><button type="button" class="show3d" data-select-part="sensor" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>Show<span class="sr-only"> Line-pressure sensor in 3D</span></button></td></tr></tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <p><strong>The slot linkage.</strong> Instead of a fixed clevis pin, the balance bar’s spherical bearing rides along a slot machined into the pedal near the pivot. Placing the bar close to the pivot sets the ~6:1 ratio. The slot’s length is sized so that the pedal’s full swing translates into the master cylinders’ <strong>1.1 in of travel</strong>.</p>
+          <p><strong>The pedal arm.</strong> The lightening pockets follow the bending moment. The moment is highest at the slot and falls off toward the pad, so the arm keeps the most material where the load is highest and sheds it where it isn’t needed.</p>
+        </div>
+        <div class="gallery"><figure class="w6"><button type="button" class="shot tall plate"><img src="../assets/img/brake-pedal-arm.webp" alt="Pedal arm with pockets and bolted toe pad" loading="lazy"></button><figcaption>Pedal arm: pockets follow the bending moment, and the toe pad bolts on</figcaption></figure><figure class="w6"><button type="button" class="shot tall plate"><img src="../assets/img/brake-iso.webp" alt="Isometric render of the assembly" loading="lazy"></button><figcaption>Balance bar, clevis, and master cylinders on the mounting plate</figcaption></figure></div>
+      </section>
+      <section class="feature" id="kinematics" aria-labelledby="kinematics-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="kinematics-h">Four pedal positions</h2></div>
+        <div class="prose">
+          <p>I laid out the pedal’s travel so each safety feature engages in the right order:</p>
+        </div>
+        <div class="table-scroll wide">
+          <table class="iter">
+            <thead><tr><th scope="col">Position</th><th scope="col">What happens</th><th scope="col" class="col-3d"><span class="sr-only">3D model</span></th></tr></thead>
+            <tbody><tr><td>1 · Rest</td><td>The pedal rests at 76.8°</td><td class="col-3d"><button type="button" class="show3d" data-goto-position="1"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>Show<span class="sr-only"> position 1 in 3D</span></button></td></tr><tr><td>2 · Lock-up</td><td>About 15° of travel from rest, where the calculated line pressure locks the brakes</td><td class="col-3d"><button type="button" class="show3d" data-goto-position="2"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>Show<span class="sr-only"> position 2 in 3D</span></button></td></tr><tr><td>3 · BOTS trip</td><td>Past normal braking. The pedal arm trips the BOTS and opens the shutdown circuit.</td><td class="col-3d"><button type="button" class="show3d" data-goto-position="3"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>Show<span class="sr-only"> position 3 in 3D</span></button></td></tr><tr><td>4 · Hard stop</td><td>The pedal hits the mechanical stop, which takes 2,000+ N into the base plate so the load never reaches the master cylinders</td><td class="col-3d"><button type="button" class="show3d" data-goto-position="4"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>Show<span class="sr-only"> position 4 in 3D</span></button></td></tr></tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <p><strong>Checking the failure case:</strong> if one hydraulic circuit fails, the pedal travels past lock-up. That single-cylinder failure reaches <strong>3° past the BOTS trip point</strong> before the hard stop, which confirms the switch catches the failure it exists for.</p>
+        </div>
+        <div class="gallery"><figure class="w12"><button type="button" class="shot plate" style="aspect-ratio:1024/817"><img src="../assets/img/brake-motion.webp" alt="Side view overlay showing four pedal positions" loading="lazy"></button><figcaption>Positions 1–4 overlaid on the side view: rest, lock-up, BOTS trip, and hard stop</figcaption></figure></div>
+      </section>
+      <section class="feature" id="safety" aria-labelledby="safety-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="safety-h">Shutdown &amp; sensing</h2></div>
+        <div class="prose">
+          <ul>
+            <li><strong>The BOTS reads pedal angle directly.</strong> It’s tripped by the pedal arm itself, not by anything downstream. If the balance bar or a pushrod fails, the pedal still swings far enough to trip it. It’s a mechanical double-pole switch with a manual reset, placed out of the driver’s reach from the seat.</li>
+            <li><strong>The pressure sensor feeds the BSPD.</strong> It’s plumbed into the front of the mounting plate. Its trip threshold is set below lock-up pressure and at or under 30 bar, so a hard stop registers before the wheels lock.</li>
+          </ul>
+        </div>
+        <div class="gallery"><figure class="w12"><button type="button" class="shot wide plate"><img src="../assets/img/brake-base.webp" alt="Mounting plate with BOTS switch and pedal pivot mounts" loading="lazy"></button><figcaption>Mounting plate with the pedal removed, showing the BOTS switch, master cylinder plate, and pivot mounts</figcaption></figure></div>
+      </section>
+      <section class="feature" id="fea" aria-labelledby="fea-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="fea-h">FEA at 2,000 N</h2></div>
+        <div class="prose">
+          <p>I ran static stress analysis in Fusion 360 with the 2,000 N rules load on the pad. Most of the work went into getting the <strong>boundary conditions</strong> right, because they decide whether the peak stress is real or an artifact of how the model is held.</p>
+          <ul>
+            <li><strong>First model:</strong> the pivot and slot were fixed rigidly. The peak landed right at the pivot, but rigid constraints make a joint stiffer than it really is, so that peak was partly caused by the constraint.</li>
+            <li><strong>Improved model:</strong> I added the balance bar so it reacts the load through the slot, like the real linkage. The peak stress <strong>dropped about 6%</strong> and moved off the pivot to where the bending-moment diagram predicts it should be.</li>
+            <li><strong>Second load case:</strong> the pedal pushed against the over-travel stop. Both load cases peak within a few percent of each other, so no single case dominates and the part is reasonably balanced.</li>
+            <li><strong>Mesh convergence:</strong> I used adaptive mesh refinement until the peak stress changed less than 5% between steps. The original case flattened to a 0.4% change on its last step.</li>
+          </ul>
+        </div>
+        <div class="readouts">
+          <div class="readout"><b>2,000 N</b><span>rules load applied at the pad</span></div>
+          <div class="readout"><b>~170 MPa</b><span>peak von Mises stress in the improved model</span></div>
+          <div class="readout"><b>&gt; 4</b><span>factor of safety against yield</span></div>
+        </div>
+        <div class="prose">
+          <p>This was my first FEA project, so these results have limits. <a href="#reflection">What I’d do with more time</a> covers the analysis I didn’t finish.</p>
+        </div>
+        <div class="gallery"><figure class="w6"><button type="button" class="shot tall plate"><img src="../assets/img/brake-fea-vonmises.webp" alt="Von Mises stress plot of the pedal arm" loading="lazy"></button><figcaption>Von Mises stress in the pedal arm under 2,000 N (first model, pivot fixed)</figcaption></figure></div>
+      </section>
+      <section class="feature" id="reflection" aria-labelledby="reflection-h">
+        <div class="feature-head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-section"></use></svg><h2 id="reflection-h">What I’d do with more time</h2></div>
+        <div class="prose">
+          <p>This challenge was <strong>my first time using FEA</strong>, and it had a firm deadline. Most of that time went into learning to set up a trustworthy model: choosing boundary conditions, understanding why a rigid constraint creates a false stress peak, and learning what mesh convergence actually shows. That meant some work I planned didn’t get finished. I’d rather say so here than hide it.</p>
+
+          <h3>1 · The FEA isn’t fully converged</h3>
+          <p>The original load case converged cleanly: its last mesh refinement changed the peak by only 0.4%. After I improved the boundary conditions, the updated case passed the 5% convergence target, but its stress was still rising with each refinement. It hadn’t leveled off. Given more time, I would:</p>
+          <ul>
+            <li>tighten the convergence target to 1–2%, refining the mesh locally around the stress peak so the run stays fast</li>
+            <li>re-plot the mounting plate and stop on their own color scale, so their stresses aren’t hidden by the pedal’s much higher peak</li>
+            <li>check the reaction force at the balance bar against 2,000 N × pedal ratio, and use it for a hand calculation of bearing stress at the slot</li>
+            <li>state the contact assumptions explicitly: bonded vs. sliding contact at the bearing, and how the bar ends are constrained</li>
+          </ul>
+
+          <h3>2 · The slot linkage can side-load the master cylinders</h3>
+          <p>I chose the slot to turn the pedal’s rotation into straight-line master cylinder travel with a compact, high-ratio linkage. The catch is that the slot swings through an arc as the pedal rotates. Even though the bearing slides along the slot, the force it pushes with isn’t perfectly in line with the master cylinder pushrods. That off-axis part is a <strong>side load</strong>, which can <strong>bend the pushrods</strong> and wear the master cylinder seals. Master cylinders are built for straight-in axial load.</p>
+          <p>I’d address it by trying, in rough order:</p>
+          <ul>
+            <li>Quantifying it first: the angle between the slot force and the pushrod axis at each pedal position, and the resulting side load at 2,000 N</li>
+            <li>Adding pushrods with rod ends at both ends, so they can angle freely and carry only axial load. This is the standard approach.</li>
+            <li>Trunnion-mounting the master cylinders so they pivot to follow the linkage</li>
+            <li>Reshaping the slot so the bearing stays closer to the pushrod axis through the working range of travel</li>
+          </ul>
+
+          <p>Knowing where a design is weak is part of the design. These are the first things I’d fix in a second revision, and the first questions I’d want to discuss with the chassis team.</p>
+        </div>
+      </section>
+
+    <a class="next-doc" href="scorpius.html">
+      <img src="../assets/img/scorpius-035.webp" class="plate" alt="" loading="lazy">
+      <span><small>Next project</small><b>Scorpius: vision-guided flywheel launcher robot</b></span>
+      <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>
+    </a>
+    <footer class="doc-foot">
+      <span>© <span id="year">2026</span> David Dwyer</span>
+      <a href="mailto:davidd22@tamu.edu">davidd22@tamu.edu</a>
+      <a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+    </footer>
+  </main>
 </div>
 
-<div class="wrap">
-  <div class="gallery" style="margin-top:28px">
-    <figure class="w12"><button class="shot plate" style="aspect-ratio:1060/905"><img src="../assets/img/brake-overview.webp" alt="Annotated render of the brake pedal assembly with numbered components" loading="lazy"></button><figcaption>The full assembly. Numbers match the component list below.</figcaption></figure>
-  </div>
+<nav class="doctabs" aria-label="Pages">
+  <ul>
+    <li><a href="../index.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg>Welcome</a></li><li><a href="../projects/fsae-brake-pedal.html" aria-current="page"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-car"></use></svg>Brake pedal</a></li><li><a href="../projects/scorpius.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg>Scorpius</a></li><li><a href="../projects/hawkbot.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg>HawkBot</a></li><li><a href="../projects/go-kart.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Go-kart</a></li><li><a href="../projects/eagle-scout.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Eagle Scout</a></li>
+  </ul>
+  <div class="status"><span><span class="dot" aria-hidden="true"></span>Looking for engineering internships</span><span>Mechanical Engineering, Texas A&amp;M</span></div>
+</nav>
+<nav class="mobilebar" aria-label="Quick links">
+  <ul>
+    <li><a href="../index.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg><span>Home</span></a></li>
+    <li><a class="is-resume" href="../assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-resume"></use></svg><span>Résumé</span></a></li>
+    <li><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span>LinkedIn</span></a></li>
+    <li><a href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>Email</span></a></li>
+  </ul>
+</nav>
+<div class="help-pop" id="help-pop" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How to use this site</h2>
+  <ol>
+    <li>On the Home page, click a project to open it.</li>
+    <li>Drag a 3D model to rotate it. To zoom, click inside it first (or hold Ctrl) and scroll, or pinch on a phone.</li>
+    <li>The blue Home button at the top left always brings you back. The tabs along the bottom switch between projects.</li>
+    <li>My résumé, LinkedIn and email are on the right edge of the screen, or along the bottom on a phone.</li>
+  </ol>
+  <button class="btn" type="button" data-help-close>Got it</button>
 </div>
 
-<section class="cs-section" style="margin-top:72px">
-  <div class="wrap cs-grid">
-    <header><span class="mono">01 · Requirements</span><h2>What the pedal has to do</h2></header>
-    <div class="prose">
-      <p>A brake pedal has two separate requirements that are easy to mix up:</p>
-      <ul>
-        <li><strong>Structural:</strong> the pedal and its mounts must survive a <strong>2,000 N</strong> force on the pad without failing. That's the Formula SAE rules load, far more than a driver normally applies.</li>
-        <li><strong>Functional:</strong> a driver must be able to lock the brakes with a comfortable leg force, within a pedal stroke that feels firm and consistent.</li>
-      </ul>
-      <p>On top of that, an EV has safety and sensing requirements that tie the pedal into the car's electronics:</p>
-      <ul>
-        <li><strong>Two independent hydraulic circuits</strong> (front and rear), so one failure can't take out all braking</li>
-        <li>A <strong>brake over-travel switch (BOTS)</strong> that opens the shutdown circuit if the pedal travels too far, which would mean a hydraulic failure</li>
-        <li><strong>Brake pressure sensing</strong> for the BSPD, which cuts motor power if the driver brakes hard while the car is still under power</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section">
-  <div class="wrap cs-grid">
-    <header><span class="mono">02 · Design</span><h2>Components</h2></header>
-    <div class="prose">
-      <div class="table-scroll">
-      <table class="iter">
-        <thead><tr><th>#</th><th>Component</th><th>Why it's there</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>Machined pedal arm, 4130 steel</td><td>Floor pivot in double shear. A slot near the pivot drives the master cylinders at a ~6:1 pedal ratio.</td></tr>
-          <tr><td>2</td><td>Bolted toe pad</td><td>A separate part, so it can be replaced as it wears or moved for driver fit without remaking the pedal</td></tr>
-          <tr><td>3</td><td>Balance bar (Tilton 600-Series)</td><td>Splits force between front and rear circuits. Its spherical bearing rides in the pedal slot.</td></tr>
-          <tr><td>4</td><td>Twin master cylinders (Tilton 75-Series)</td><td>One for the front brakes and one for the rear, giving two independent circuits</td></tr>
-          <tr><td>5</td><td>Mechanical over-travel stop, 4130 steel</td><td>A hard stop that takes the load into the base plate so the master cylinders are never overloaded</td></tr>
-          <tr><td>6</td><td>BOTS switch (Honeywell 2T1-6)</td><td>A mechanical double-pole toggle switch tripped directly by the pedal arm</td></tr>
-          <tr><td>7</td><td>Line-pressure sensor (Texense FPS-V2)</td><td>Measures brake pressure for the BSPD</td></tr>
-        </tbody>
-      </table>
-      </div>
-      <p><strong>The slot linkage.</strong> Instead of a fixed clevis pin, the balance bar's spherical bearing rides along a slot machined into the pedal near the pivot. Placing the bar close to the pivot sets the ~6:1 ratio. The slot's length is sized so that the pedal's full swing translates into the master cylinders' <strong>1.1 in of travel</strong>.</p>
-      <p><strong>The pedal arm.</strong> The lightening pockets follow the bending moment. The moment is highest at the slot and falls off toward the pad, so the arm keeps the most material where the load is highest and sheds it where it isn't needed.</p>
-      <div class="gallery">
-        <figure class="w6"><button class="shot tall plate"><img src="../assets/img/brake-pedal-arm.webp" alt="Pedal arm with pockets and bolted toe pad" loading="lazy"></button><figcaption>Pedal arm: pockets follow the bending moment, and the toe pad bolts on</figcaption></figure>
-        <figure class="w6"><button class="shot tall plate"><img src="../assets/img/brake-iso.webp" alt="Isometric render of the assembly" loading="lazy"></button><figcaption>Balance bar, clevis, and master cylinders on the mounting plate</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section">
-  <div class="wrap cs-grid">
-    <header><span class="mono">03 · Kinematics</span><h2>Four pedal positions</h2></header>
-    <div class="prose">
-      <p>I laid out the pedal's travel so each safety feature engages in the right order:</p>
-      <div class="table-scroll">
-      <table class="iter">
-        <thead><tr><th>Position</th><th>What happens</th></tr></thead>
-        <tbody>
-          <tr><td>1 · Rest</td><td>The pedal rests at 76.8°</td></tr>
-          <tr><td>2 · Lock-up</td><td>About 15° of travel from rest, where the calculated line pressure locks the brakes</td></tr>
-          <tr><td>3 · BOTS trip</td><td>Past normal braking. The pedal arm trips the BOTS and opens the shutdown circuit.</td></tr>
-          <tr><td>4 · Hard stop</td><td>The pedal hits the mechanical stop, which takes 2,000+ N into the base plate so the load never reaches the master cylinders</td></tr>
-        </tbody>
-      </table>
-      </div>
-      <p><strong>Checking the failure case:</strong> if one hydraulic circuit fails, the pedal travels past lock-up. That single-cylinder failure reaches <strong>3° past the BOTS trip point</strong> before the hard stop, which confirms the switch catches the failure it exists for.</p>
-      <div class="gallery">
-        <figure class="w12"><button class="shot plate" style="aspect-ratio:1024/817"><img src="../assets/img/brake-motion.webp" alt="Side view overlay showing four pedal positions" loading="lazy"></button><figcaption>Positions 1–4 overlaid on the side view: rest, lock-up, BOTS trip, and hard stop</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section">
-  <div class="wrap cs-grid">
-    <header><span class="mono">04 · Safety</span><h2>Shutdown &amp; sensing</h2></header>
-    <div class="prose">
-      <ul>
-        <li><strong>The BOTS reads pedal angle directly.</strong> It's tripped by the pedal arm itself, not by anything downstream. If the balance bar or a pushrod fails, the pedal still swings far enough to trip it. It's a mechanical double-pole switch with a manual reset, placed out of the driver's reach from the seat.</li>
-        <li><strong>The pressure sensor feeds the BSPD.</strong> It's plumbed into the front of the mounting plate. Its trip threshold is set below lock-up pressure and at or under 30 bar, so a hard stop registers before the wheels lock.</li>
-      </ul>
-      <div class="gallery">
-        <figure class="w12"><button class="shot plate wide"><img src="../assets/img/brake-base.webp" alt="Mounting plate with BOTS switch and pedal pivot mounts" loading="lazy"></button><figcaption>Mounting plate with the pedal removed, showing the BOTS switch, master cylinder plate, and pivot mounts</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section">
-  <div class="wrap cs-grid">
-    <header><span class="mono">05 · Analysis</span><h2>FEA at 2,000 N</h2></header>
-    <div class="prose">
-      <p>I ran static stress analysis in Fusion 360 with the 2,000 N rules load on the pad. Most of the work went into getting the <strong>boundary conditions</strong> right, because they decide whether the peak stress is real or an artifact of how the model is held.</p>
-      <ul>
-        <li><strong>First model:</strong> the pivot and slot were fixed rigidly. The peak landed right at the pivot, but rigid constraints make a joint stiffer than it really is, so that peak was partly caused by the constraint.</li>
-        <li><strong>Improved model:</strong> I added the balance bar so it reacts the load through the slot, like the real linkage. The peak stress <strong>dropped about 6%</strong> and moved off the pivot to where the bending-moment diagram predicts it should be.</li>
-        <li><strong>Second load case:</strong> the pedal pushed against the over-travel stop. Both load cases peak within a few percent of each other, so no single case dominates and the part is reasonably balanced.</li>
-        <li><strong>Mesh convergence:</strong> I used adaptive mesh refinement until the peak stress changed less than 5% between steps. The original case flattened to a 0.4% change on its last step.</li>
-      </ul>
-      <div class="callouts">
-        <div class="callout"><b>2,000 N</b><span>rules load applied at the pad</span></div>
-        <div class="callout"><b>~170 MPa</b><span>peak von Mises stress in the improved model</span></div>
-        <div class="callout"><b>&gt; 4</b><span>factor of safety against yield</span></div>
-      </div>
-      <p>This was my first FEA project, so these results have limits. <a href="#reflection">What I'd do with more time</a> covers the analysis I didn't finish.</p>
-      <div class="gallery">
-        <figure class="w6"><button class="shot tall plate"><img src="../assets/img/brake-fea-vonmises.webp" alt="Von Mises stress plot of the pedal arm" loading="lazy"></button><figcaption>Von Mises stress in the pedal arm under 2,000 N (first model, pivot fixed)</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section" id="reflection">
-  <div class="wrap cs-grid">
-    <header><span class="mono">06 · Reflection</span><h2>What I'd do with more time</h2></header>
-    <div class="prose">
-      <p>This challenge was <strong>my first time using FEA</strong>, and it had a firm deadline. Most of that time went into learning to set up a trustworthy model: choosing boundary conditions, understanding why a rigid constraint creates a false stress peak, and learning what mesh convergence actually shows. That meant some work I planned didn't get finished. I'd rather say so here than hide it.</p>
-
-      <h3 style="margin:28px 0 10px">1 · The FEA isn't fully converged</h3>
-      <p>The original load case converged cleanly: its last mesh refinement changed the peak by only 0.4%. After I improved the boundary conditions, the updated case passed the 5% convergence target, but its stress was still rising with each refinement. It hadn't leveled off. Given more time, I would:</p>
-      <ul>
-        <li>tighten the convergence target to 1–2%, refining the mesh locally around the stress peak so the run stays fast</li>
-        <li>re-plot the mounting plate and stop on their own color scale, so their stresses aren't hidden by the pedal's much higher peak</li>
-        <li>check the reaction force at the balance bar against 2,000 N × pedal ratio, and use it for a hand calculation of bearing stress at the slot</li>
-        <li>state the contact assumptions explicitly: bonded vs. sliding contact at the bearing, and how the bar ends are constrained</li>
-      </ul>
-
-      <h3 style="margin:28px 0 10px">2 · The slot linkage can side-load the master cylinders</h3>
-      <p>I chose the slot to turn the pedal's rotation into straight-line master cylinder travel with a compact, high-ratio linkage. The catch is that the slot swings through an arc as the pedal rotates. Even though the bearing slides along the slot, the force it pushes with isn't perfectly in line with the master cylinder pushrods. That off-axis part is a <strong>side load</strong>, which can <strong>bend the pushrods</strong> and wear the master cylinder seals. Master cylinders are built for straight-in axial load.</p>
-      <p>I'd address it by trying, in rough order:</p>
-      <ul>
-        <li>Quantifying it first: the angle between the slot force and the pushrod axis at each pedal position, and the resulting side load at 2,000 N</li>
-        <li>Adding pushrods with rod ends at both ends, so they can angle freely and carry only axial load. This is the standard approach.</li>
-        <li>Trunnion-mounting the master cylinders so they pivot to follow the linkage</li>
-        <li>Reshaping the slot so the bearing stays closer to the pushrod axis through the working range of travel</li>
-      </ul>
-
-      <p>Knowing where a design is weak is part of the design. These are the first things I'd fix in a second revision, and the first questions I'd want to discuss with the chassis team.</p>
-    </div>
-  </div>
-</section>
-
-<div class="wrap">
-  <a class="next-project" href="scorpius.html">
-    <div><span class="mono muted">Next project</span><h3>Scorpius · FTC 2025–26</h3></div>
-    <span class="btn">→</span>
-  </a>
-</div>
-
-<footer>
-  <div class="wrap">
-    <span>© <span id="year">2026</span> David Dwyer</span>
-    <a href="mailto:davidd22@tamu.edu">davidd22@tamu.edu</a>
-  </div>
-</footer>
 <script src="../js/main.js"></script>
+<script type="module" src="../js/viewer.js"></script>
 </body>
 </html>

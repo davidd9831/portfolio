@@ -4,243 +4,282 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>David Dwyer — Mechanical Design & Fabrication</title>
-  <meta name="description" content="Engineering portfolio of David Dwyer: competition robot design, CAD, CNC machining, carbon fiber fabrication, and hands-on builds.">
+  <meta name="description" content="Engineering portfolio of David Dwyer: a Formula SAE EV brake pedal you can operate in 3D, competition robot design, CAD, CNC machining, carbon fiber fabrication, and hands-on builds.">
   <meta property="og:title" content="David Dwyer — Mechanical Design & Fabrication">
-  <meta property="og:description" content="Competition robots, CAD, CNC and carbon fiber, a 50 mph go-kart, and an Eagle Scout build.">
+  <meta property="og:description" content="Engineering portfolio of David Dwyer: a Formula SAE EV brake pedal you can operate in 3D, competition robot design, CAD, CNC machining, carbon fiber fabrication, and hands-on builds.">
   <meta property="og:image" content="assets/img/scorpius-035.webp">
-  <meta name="theme-color" content="#f5f5f2">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c1c1e'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ffffff'>DD</text></svg>">
+  <meta name="theme-color" content="#e8ebee">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c2126'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%23ffffff'>DD</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4/dist/model-viewer.min.js"></script>
+  <script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('dd-intro-seen')!=='1'&&!/[?&]nointro\b/.test(location.search))document.documentElement.classList.add('intro-pending')}catch(e){}</script>
 </head>
-<body>
+<body class="page-home">
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h5v-6h3v6h5V9.5"/></symbol><symbol id="i-resume" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15.5h6M9 8.5h2.5"/></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16.5c.6-1.7 1.8-2.6 3.2-2.6s2.6.9 3.2 2.6"/><path d="M14.5 10h4M14.5 13.5h3"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 7 8.5 6.5L20.5 7"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2 1-1.2 1.9v.4"/><path d="M12 16.9v.2"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5.5 5.5"/></symbol><symbol id="i-car" viewBox="0 0 24 24"><path d="M2.5 15.5h2M9.3 15.5h5.9M20 15.5h1.5"/><path d="M3.5 13.2 7 11h3.5l1.6-2.3h2l1.4 2.3h3.6l2.3 2.7"/><circle cx="7" cy="15.5" r="2.3"/><circle cx="17.6" cy="15.5" r="2.3"/></symbol><symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="2"/><path d="M12 5v3"/><circle cx="12" cy="4" r="1"/><circle cx="9.5" cy="12.5" r="1.1"/><circle cx="14.5" cy="12.5" r="1.1"/><path d="M9.5 15.5h5M3 11.5v3.5M21 11.5v3.5"/></symbol><symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.6 4.2a4.6 4.6 0 0 0-4.4 6L4 16.4 7.6 20l6.2-6.2a4.6 4.6 0 0 0 6-4.4l-2.8 2.8-2.6-.6-.6-2.6z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx=".5"/><rect x="13" y="4" width="7" height="7" rx=".5"/><rect x="4" y="13" width="7" height="7" rx=".5"/><rect x="13" y="13" width="7" height="7" rx=".5"/></symbol><symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/><path d="M12 9v6M9 12h6"/></symbol><symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></symbol><symbol id="i-edges" viewBox="0 0 24 24"><path d="M4 8.5 8.5 4H20v11.5L15.5 20H4z"/><path d="M4 8.5h11.5V20M15.5 8.5 20 4"/></symbol><symbol id="i-explode" viewBox="0 0 24 24"><rect x="9.2" y="9.2" width="5.6" height="5.6"/><path d="M4 4l3.2 3.2M20 4l-3.2 3.2M4 20l3.2-3.2M20 20l-3.2-3.2"/><path d="M4 7V4h3M17 4h3v3M20 17v3h-3M7 20H4v-3"/></symbol><symbol id="i-balloon" viewBox="0 0 24 24"><circle cx="14.5" cy="9.5" r="5.5"/><path d="M10.6 13.4 4 20"/><path d="M13.6 8.1 15 7v5"/></symbol><symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol><symbol id="i-collapse" viewBox="0 0 24 24"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></symbol><symbol id="i-chev-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol><symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-assembly" viewBox="0 0 24 24"><path d="M12 3 20 7v4.5l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4M12 11v4.5"/><path d="M4 15.5 12 19.5l8-4"/></symbol><symbol id="i-part" viewBox="0 0 24 24"><path d="M12 4 19.5 8v8L12 20l-7.5-4V8z"/><path d="M4.5 8 12 12l7.5-4M12 12v8"/></symbol><symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2h8.5A1.5 1.5 0 0 1 21 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/></symbol><symbol id="i-section" viewBox="0 0 24 24"><path d="M5.5 3.5h13v17h-13z"/><path d="M8.5 8h7M8.5 11.5h7M8.5 15h4.5"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M8.5 3.5h7l1.8 2.7-1.8 2.8h-7L6.7 6.2z"/><path d="M10 9v11.5h4V9"/><path d="M10 12.5l4-1.2M10 16l4-1.2"/></symbol><symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="1.5"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8.5 6l1.5-2h4l1.5 2"/></symbol><symbol id="i-props" viewBox="0 0 24 24"><path d="M5 3.5h14v17H5z"/><path d="M8 8h2M12.5 8H16M8 12h2M12.5 12H16M8 16h2M12.5 16H16"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></symbol><symbol id="i-mill" viewBox="0 0 24 24"><path d="M9 3h6v4H9z"/><path d="M10 7v8l2 3 2-3V7"/><path d="M10 10.5l4-1.5M10 13.5l4-1.5"/><path d="M4 21h16"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8 8"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol></svg>
+<a class="skip-link" href="#welcome">Skip to the projects</a>
 
-<nav class="nav">
-  <div class="wrap">
-    <a class="brand" href="index.html">David Dwyer<span>.</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Menu">Menu</button>
-    <div class="nav-links">
-      <a href="#fsae">FSAE EV</a>
-      <a href="#ftc">FTC Robotics</a>
-      <a href="#other">Other</a>
-      <a href="#experience">Experience</a>
-      <a href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">Mechanical Engineering · Texas A&amp;M</div>
-      <h1>CAD, robotics, <span class="accent">and design.</span></h1>
-      <p class="lead">I'm David Dwyer, a mechanical engineering student who designs competition robots, machines carbon fiber, and builds things that move. I was Design Lead for two FIRST Tech Challenge teams, where our robots were made mostly from parts we designed and manufactured ourselves. Most recently, I designed a brake pedal assembly for the Texas A&amp;M Formula SAE EV chassis subteam's design challenge.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="#work">See my work</a>
-        <a class="btn" href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
-      </div>
-    </div>
-    <div class="hero-viewer">
-      <model-viewer
-        src="assets/models/scorpius.glb"
-        alt="Interactive 3D model of Scorpius, a competition robot I helped design"
-        camera-controls auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
-        interaction-prompt="none" shadow-intensity="1" shadow-softness="0.9"
-        environment-image="neutral" exposure="1.05" camera-orbit="35deg 70deg auto"
-        disable-zoom disable-pan disable-tap touch-action="pan-y"
-        min-camera-orbit="auto 50deg auto" max-camera-orbit="auto 90deg auto" tone-mapping="neutral">
-      </model-viewer>
-      <div class="viewer-hint mono">Drag to rotate · Scorpius, 2025–26</div>
-    </div>
-  </div>
+<header class="titlebar">
+  <span class="tb-mark" aria-hidden="true">DD</span>
+  <p class="tb-title">David Dwyer<span>Mechanical engineering portfolio</span></p>
+  <span class="tb-spacer"></span>
 </header>
 
-<div class="wrap">
-  <div class="stats reveal">
-    <div class="stat"><b>220+</b><span>custom parts across 3 competition robots</span></div>
-    <div class="stat"><b>~470</b><span>team CAD hours across the last two seasons</span></div>
-    <div class="stat"><b>2×</b><span>1st Place Design Award (2025, 2026)</span></div>
-    <div class="stat"><b>12+</b><span>teams worldwide use our open-source chassis</span></div>
-  </div>
+<aside class="taskpane" aria-label="Résumé and contact">
+  <ul>
+    <li><a class="is-resume" href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-resume"></use></svg><span class="tp-label">Résumé (PDF)</span></a></li>
+    <li><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span class="tp-label">LinkedIn</span></a></li>
+    <li><a href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span class="tp-label">Email davidd22@tamu.edu</span></a></li>
+  </ul>
+</aside>
+
+<main id="main" class="home-area">
+  <div class="bg-viewport" data-viewer="brake-pedal" data-mode="ambient" aria-hidden="true"></div>
+  <p class="bg-caption" aria-hidden="true">In the background: the brake pedal assembly from my Formula SAE EV project</p>
+
+  <section class="welcome" id="welcome" aria-labelledby="welcome-title">
+    <div class="welcome-titlebar">
+      <span class="tb-mark" aria-hidden="true">DD</span>
+      <h1 id="welcome-title">Welcome – David Dwyer</h1>
+      <button class="icon-btn" type="button" data-help aria-expanded="false" aria-controls="help-pop"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-help"></use></svg><span>How to use this site</span></button>
+    </div>
+
+    <div class="welcome-head">
+      <div class="tabs" role="tablist" aria-label="Welcome">
+        <button class="tab" type="button" role="tab" id="tab-about" data-tab="about" aria-controls="panel-about" aria-selected="false" tabindex="-1">About</button>
+        <button class="tab" type="button" role="tab" id="tab-projects" data-tab="projects" aria-controls="panel-projects" aria-selected="true">Projects</button>
+        <button class="tab" type="button" role="tab" id="tab-skills" data-tab="skills" aria-controls="panel-skills" aria-selected="false" tabindex="-1">Skills</button>
+        <button class="tab" type="button" role="tab" id="tab-contact" data-tab="contact" aria-controls="panel-contact" aria-selected="false" tabindex="-1">Contact</button>
+      </div>
+      <a class="btn btn-resume" href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </div>
+
+    <div class="welcome-body">
+
+      <!-- Projects -->
+      <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="0">
+        <div class="pj-bar">
+          <p class="pj-intro"><strong>CAD, robotics, and design.</strong> I’m a mechanical engineering student at Texas A&amp;M. Click a project to open it.</p>
+          <div class="pj-contact">
+            <a class="btn" href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg>Email</a>
+            <a class="btn" href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg>LinkedIn</a>
+          </div>
+        </div>
+        <div class="pj-tools">
+          <div class="qf" role="group" aria-label="Show projects from">
+            <span class="qf-label">Show</span>
+            <button type="button" data-filter="all" aria-pressed="true"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-grid"></use></svg>All</button>
+            <button type="button" data-filter="fsae" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-car"></use></svg>Formula SAE EV</button>
+            <button type="button" data-filter="ftc" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg>FTC Robotics</button>
+            <button type="button" data-filter="other" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Other</button>
+          </div>
+          <label class="search"><span class="sr-only">Filter projects by name</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-search"></use></svg><input id="project-search" type="search" placeholder="Filter by name" autocomplete="off" spellcheck="false"></label>
+        </div>
+        <ul class="docgrid">
+        <li data-team="fsae" data-keywords="fusion 360 fea brakes pedal fsae texas a&m chassis formula">
+          <a class="doc" href="projects/fsae-brake-pedal.html" data-title="Brake pedal assembly" data-summary="A floor-pivot steel pedal with a ~6:1 ratio, a balance bar that slides in a slot in the pedal, twin master cylinders, a mechanical over-travel stop, BOTS switch and line-pressure sensor. Checked with FEA against the 2,000 N rules load." data-role="Designer, individual design challenge" aria-describedby="sum-fsae-brake-pedal">
+            <span class="doc-file">brake-assembly-v2</span>
+            <span class="doc-thumb plate"><img src="assets/img/brake-iso.webp" alt="" width="750" height="565" loading="lazy"><span class="doc-3d" title="Includes a 3D model you can rotate">3D</span><span class="doc-badge" title="Formula SAE EV"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-car"></use></svg></span></span>
+            <span class="doc-title">Brake pedal assembly</span>
+            <span class="doc-meta">Formula SAE EV</span>
+            <span class="sr-only" id="sum-fsae-brake-pedal">Formula SAE EV. A floor-pivot steel pedal with a ~6:1 ratio, a balance bar that slides in a slot in the pedal, twin master cylinders, a mechanical over-travel stop, BOTS switch and line-pressure sensor. Checked with FEA against the 2,000 N rules load. Includes a 3D model you can rotate.</span>
+          </a>
+        </li>
+        <li data-team="ftc" data-keywords="onshape cnc carbon fiber flywheel turret decode robot first tech challenge">
+          <a class="doc" href="projects/scorpius.html" data-title="Scorpius: vision-guided flywheel launcher robot" data-summary="Carbon fiber tank-drive chassis with a turret, a five-version custom flywheel, and an intake that covers 3× the area. 92 custom parts from 62 unique designs." data-role="Design Lead, Team 6832" aria-describedby="sum-scorpius">
+            <span class="doc-file">scorpius-6832</span>
+            <span class="doc-thumb plate"><img src="assets/img/scorpius-035.webp" alt="" width="1335" height="1300" loading="lazy"><span class="doc-3d" title="Includes a 3D model you can rotate">3D</span><span class="doc-badge" title="FTC Robotics"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg></span></span>
+            <span class="doc-title">Scorpius: vision-guided flywheel launcher robot</span>
+            <span class="doc-meta">FTC Robotics, 2025–26</span>
+            <span class="sr-only" id="sum-scorpius">FTC Robotics, 2025–26. Carbon fiber tank-drive chassis with a turret, a five-version custom flywheel, and an intake that covers 3× the area. 92 custom parts from 62 unique designs. Includes a 3D model you can rotate.</span>
+          </a>
+        </li>
+        <li data-team="ftc" data-keywords="fusion 360 cam cnc carbon fiber polycarbonate into the deep robot first tech challenge">
+          <a class="doc" href="projects/hawkbot.html" data-title="HawkBot: our first fully custom chassis" data-summary="Went from a kit-based prototype to a CNC-machined carbon fiber and polycarbonate robot in one season." data-role="Design Lead, Team 3734" aria-describedby="sum-hawkbot">
+            <span class="doc-file">hawkbot-v2-3734</span>
+            <span class="doc-thumb"><img src="assets/img/hawkbot-v2.webp" alt="" width="1357" height="952" loading="lazy"><span class="doc-3d" title="Includes a 3D model you can rotate">3D</span><span class="doc-badge" title="FTC Robotics"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg></span></span>
+            <span class="doc-title">HawkBot: our first fully custom chassis</span>
+            <span class="doc-meta">FTC Robotics, 2024–25</span>
+            <span class="sr-only" id="sum-hawkbot">FTC Robotics, 2024–25. Went from a kit-based prototype to a CNC-machined carbon fiber and polycarbonate robot in one season. Includes a 3D model you can rotate.</span>
+          </a>
+        </li>
+        <li data-team="other" data-keywords="fabrication drivetrain tuning engine kart">
+          <a class="doc" href="projects/go-kart.html" data-title="Custom go-kart, built to 50 mph" data-summary="Frame, drivetrain, steering, electrical and safety systems, plus engine and control upgrades." data-role="Lead builder and designer" aria-describedby="sum-go-kart">
+            <span class="doc-file">go-kart</span>
+            <span class="doc-thumb"><img src="assets/img/kart-1.webp" alt="" width="1600" height="1200" loading="lazy"><span class="doc-badge" title="Other projects"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span></span>
+            <span class="doc-title">Custom go-kart, built to 50 mph</span>
+            <span class="doc-meta">Personal project</span>
+            <span class="sr-only" id="sum-go-kart">Personal project. Frame, drivetrain, steering, electrical and safety systems, plus engine and control upgrades.</span>
+          </a>
+        </li>
+        <li data-team="other" data-keywords="cad project management construction volunteers boy scouts troop 838">
+          <a class="doc" href="projects/eagle-scout.html" data-title="Rainwater collection platforms and wayfinding markers" data-summary="Designed in CAD, then built and installed with 25+ volunteers on a $2,100+ budget. Covered by a local Dallas newspaper." data-role="Project manager and designer" aria-describedby="sum-eagle-scout">
+            <span class="doc-file">eagle-scout-838</span>
+            <span class="doc-thumb"><img src="assets/img/eagle-finished.webp" alt="" width="1600" height="868" loading="lazy"><span class="doc-badge" title="Other projects"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg></span></span>
+            <span class="doc-title">Rainwater collection platforms and wayfinding markers</span>
+            <span class="doc-meta">Eagle Scout project</span>
+            <span class="sr-only" id="sum-eagle-scout">Eagle Scout project. Designed in CAD, then built and installed with 25+ volunteers on a $2,100+ budget. Covered by a local Dallas newspaper.</span>
+          </a>
+        </li>
+        </ul>
+        <div class="pj-empty" hidden><span class="pj-empty-q"></span> <button class="btn" type="button">Show all projects</button></div>
+        <p class="details" aria-hidden="true"><b class="details-title">Tip</b><span class="details-text">Point at a project to see a summary here.</span><span class="details-role"></span></p>
+      </div>
+
+      <!-- About -->
+      <div class="panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0">
+        <div class="about-grid">
+          <div>
+            <h2>About me</h2>
+            <p class="about-lead">I’m David Dwyer, a mechanical engineering student who designs competition robots, machines carbon fiber, and builds things that move. I was Design Lead for two FIRST Tech Challenge teams, where our robots were made mostly from parts we designed and manufactured ourselves. Most recently, I designed a brake pedal assembly for the Texas A&amp;M Formula SAE EV chassis subteam’s design challenge.</p>
+            <p class="muted">Mechanical Engineering, Texas A&amp;M. Based in College Station and Dallas, Texas.</p>
+            <p><a class="btn btn-blue" href="projects/fsae-brake-pedal.html">Open the brake pedal project</a></p>
+          </div>
+          <table class="props">
+            <caption>By the numbers</caption>
+            <tbody>
+              <tr><th scope="row">Custom parts across 3 competition robots</th><td>220+</td></tr>
+              <tr><th scope="row">Team CAD hours across the last two seasons</th><td>~470</td></tr>
+              <tr><th scope="row">1st Place Design Awards</th><td>2025, 2026</td></tr>
+              <tr><th scope="row">Teams worldwide using our open-source chassis</th><td>12+</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="about-cols">
+          <div>
+            <h2>Leadership</h2>
+            <ul class="rows">
+              <li><span class="when">2024–2026</span><div><b>Team Captain &amp; Design Lead, FIRST Tech Challenge</b><span class="desc">Teams 6832 Iron Reign &amp; 3734 Iron Giant. Led a 15-member team to Regional and State Championships by coordinating the design, build, and programming sub-teams.</span></div></li>
+              <li><span class="when">2022–2024</span><div><b>Member, FIRST Tech Challenge</b><span class="desc">CAD, design and build.</span></div></li>
+              <li><span class="when">2025–now</span><div><b>Pool Technician &amp; Shift Leader, Glen Cove Swim Club</b><span class="desc">Maintained filtration and chemical systems, reducing facility downtime by 20%. Named Rookie Lifeguard of the Year (2025).</span></div></li>
+              <li><span class="when">2022–now</span><div><b>Eagle Scout, Troop 838</b><span class="desc">Project manager for a community infrastructure build. Teaches younger scouts technical and safety skills.</span></div></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Honors</h2>
+            <ul class="rows">
+              <li><span class="when">2025, 2026</span><div><b>1st Place Design Award</b><span class="desc">Regional FTC engineering honor for our robot designs</span></div></li>
+              <li><span class="when">FTC</span><div><b>1st Place Sustain Award, 2nd Place Inspire Award</b><span class="desc">For mechanical innovation, reliability, and engineering documentation</span></div></li>
+              <li><span class="when">Open source</span><div><b>Chassis design used by 12+ teams worldwide</b><span class="desc">We published an open-source chassis design that other FTC teams have built</span></div></li>
+              <li><span class="when">Funding</span><div><b>~$13,000 in industry sponsorships</b><span class="desc">Raised through presentations to partners including Southwest Airlines</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" tabindex="0">
+        <div class="skills-grid">
+          <section class="skill">
+            <h2><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cube"></use></svg>CAD / CAM</h2>
+            <ul>
+              <li>Onshape, Fusion 360</li>
+              <li>Large multi-subsystem assemblies</li>
+              <li>Fusion 360 CAM toolpaths</li>
+              <li>Design for manufacturing</li>
+              <li>Blender rendering and animation</li>
+            </ul>
+          </section>
+          <section class="skill">
+            <h2><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mill"></use></svg>Fabrication</h2>
+            <ul>
+              <li>CNC milling (carbon fiber, polycarbonate)</li>
+              <li>3D printing (PLA, nylon, TPU)</li>
+              <li>Carbon fiber layup</li>
+              <li>Aluminum fabrication</li>
+              <li>Hand and power tools, assembly</li>
+            </ul>
+          </section>
+          <section class="skill">
+            <h2><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-gear"></use></svg>Systems &amp; software</h2>
+            <ul>
+              <li>Drivetrains: mecanum, tank, swerve</li>
+              <li>Flywheels, linear slides, intakes</li>
+              <li>Sensor integration and system schematics</li>
+              <li>Java, Python</li>
+              <li>Technical presentations</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="panel" id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="0">
+        <div class="contact-panel">
+          <div>
+            <p class="big">Let’s build something.</p>
+            <p>I’m looking for engineering internships in mechanical design, manufacturing, and robotics.</p>
+            <p class="muted"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg> Dallas, TX and College Station, TX</p>
+          </div>
+          <ul class="contact-list">
+            <li><a href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>Email<small>davidd22@tamu.edu</small></span></a></li>
+            <li><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span>LinkedIn<small>linkedin.com/in/daviddwyer</small></span></a></li>
+            <li><a class="resume" href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-resume"></use></svg><span>Résumé<small>PDF, opens in a new tab</small></span></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<nav class="doctabs" aria-label="Pages">
+  <ul>
+    <li><a href="index.html" aria-current="page"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg>Welcome</a></li><li><a href="projects/fsae-brake-pedal.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-car"></use></svg>Brake pedal</a></li><li><a href="projects/scorpius.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg>Scorpius</a></li><li><a href="projects/hawkbot.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-robot"></use></svg>HawkBot</a></li><li><a href="projects/go-kart.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Go-kart</a></li><li><a href="projects/eagle-scout.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wrench"></use></svg>Eagle Scout</a></li>
+  </ul>
+  <div class="status"><span><span class="dot" aria-hidden="true"></span>Looking for engineering internships</span><span>Mechanical Engineering, Texas A&amp;M</span></div>
+</nav>
+<nav class="mobilebar" aria-label="Quick links">
+  <ul>
+    <li><a href="index.html" aria-current="page"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg><span>Home</span></a></li>
+    <li><a class="is-resume" href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-resume"></use></svg><span>Résumé</span></a></li>
+    <li><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span>LinkedIn</span></a></li>
+    <li><a href="mailto:davidd22@tamu.edu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>Email</span></a></li>
+  </ul>
+</nav>
+<div class="help-pop" id="help-pop" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How to use this site</h2>
+  <ol>
+    <li>On the Home page, click a project to open it.</li>
+    <li>Drag a 3D model to rotate it. To zoom, click inside it first (or hold Ctrl) and scroll, or pinch on a phone.</li>
+    <li>The blue Home button at the top left always brings you back. The tabs along the bottom switch between projects.</li>
+    <li>My résumé, LinkedIn and email are on the right edge of the screen, or along the bottom on a phone.</li>
+  </ol>
+  <button class="btn" type="button" data-help-close>Got it</button>
 </div>
-
-<section id="work">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">Selected work</div>
-        <h2>Projects</h2>
-      </div>
-      <p class="muted">Each project covers the problem, the design iterations, how the parts were made, and how it performed. Several include a 3D model you can rotate.</p>
-    </div>
-
-    <div class="group-head reveal" id="fsae">
-      <h3>Formula SAE EV</h3>
-      <span class="mono">Texas A&amp;M · Chassis</span>
-    </div>
-    <div class="projects">
-      <a class="card reveal" href="projects/fsae-brake-pedal.html">
-        <div class="card-media plate"><img src="assets/img/brake-iso.webp" alt="CAD render of the brake pedal assembly" loading="lazy"></div>
-        <div class="card-body">
-          <span class="mono card-meta">Texas A&amp;M Formula SAE EV · Chassis design challenge</span>
-          <h3>Brake pedal assembly</h3>
-          <p>A floor-pivot steel pedal with a ~6:1 ratio, a balance bar that slides in a slot in the pedal, twin master cylinders, a mechanical over-travel stop, BOTS switch and line-pressure sensor. Checked with FEA against the 2,000 N rules load.</p>
-          <div class="tags"><span class="tag">Fusion 360</span><span class="tag">FEA</span><span class="tag">FSAE rules</span></div>
-          <span class="card-arrow">View case study</span>
+<template id="splash-tpl">
+  <div class="splash" role="status" aria-label="Loading the portfolio">
+    <div class="sheet">
+      <button class="btn splash-skip" type="button">Skip intro</button>
+      <div class="sheet-inner">
+        <div class="sheet-drawing" aria-hidden="true">
+          <svg viewBox="0 0 76.4 211.1" preserveAspectRatio="xMidYMid meet">
+            <path class="draw" pathLength="1" d="M10.4 200.4 L9.0 198.4 L8.4 196.9 L8.0 194.5 L8.1 192.8 L17.1 160.0 L22.3 137.9 L25.1 133.2 L27.2 130.4 L29.4 128.0 L32.8 125.0 L40.4 119.4 L42.2 117.6 L43.7 115.7 L45.7 112.4 L47.1 109.2 L48.5 104.9 L49.6 100.3 L50.8 93.4 L51.9 85.0 L52.4 76.1 L52.2 71.1 L51.2 67.8 L49.4 64.5 L45.8 59.9 L41.8 55.4 L45.5 39.9 L50.1 41.0 L51.6 41.8 L55.6 44.6 L59.7 48.3 L65.7 49.8 L64.4 55.4 L66.1 59.1 L67.5 63.8 L68.1 67.1 L68.4 72.0 L68.2 75.3 L63.4 117.9 L51.3 168.9 L50.3 172.0 L49.3 173.9 L48.0 175.7 L46.6 177.3 L22.9 200.6 L21.7 201.6 L20.2 202.4 L18.7 202.9 L17.0 203.1 L15.4 203.0 L13.8 202.6 L12.3 201.9 L10.4 200.4Z M63.6 84.7 L64.4 77.5 L64.3 76.9 L63.9 76.4 L63.3 76.0 L62.7 76.0 L57.4 78.6 L56.8 79.3 L56.7 80.0 L57.1 80.8 L61.2 85.6 L61.9 85.9 L62.6 85.8 L63.2 85.4 L63.6 84.7Z M46.9 52.4 L46.5 52.3 L46.1 52.5 L45.7 54.5 L50.7 60.2 L52.6 63.0 L53.8 65.0 L55.3 68.7 L55.7 70.8 L55.9 73.6 L56.3 74.5 L56.9 74.9 L57.7 75.0 L63.4 72.1 L63.9 71.2 L63.6 70.1 L46.9 52.4Z M55.4 86.5 L54.1 95.5 L54.4 96.3 L55.1 96.8 L55.8 96.8 L56.5 96.6 L61.4 93.0 L62.0 92.3 L62.0 91.6 L61.8 91.0 L57.8 86.3 L57.2 85.9 L56.1 85.9 L55.4 86.5Z M53.5 102.4 L53.1 103.1 L53.2 104.1 L57.9 111.7 L58.7 112.3 L59.5 112.3 L60.0 112.1 L60.4 111.7 L60.6 111.0 L61.9 99.4 L61.7 98.4 L60.8 97.8 L59.7 98.0 L53.5 102.4Z M52.5 46.7 L48.9 44.3 L48.1 44.8 L47.7 45.7 L47.7 46.5 L48.1 47.1 L58.7 58.3 L59.6 58.8 L60.6 58.5 L61.2 57.8 L61.2 56.9 L59.5 54.1 L58.0 51.9 L55.9 49.7 L52.5 46.7Z M45.7 120.4 L46.3 121.0 L47.2 121.2 L57.0 120.0 L57.7 119.8 L58.1 119.3 L58.3 118.6 L58.1 117.7 L53.2 109.8 L52.7 109.3 L51.6 109.1 L50.7 109.7 L48.4 114.8 L45.7 119.0 L45.5 119.8 L45.7 120.4Z M38.7 125.2 L38.0 125.6 L37.6 126.0 L37.6 126.7 L38.0 127.2 L43.1 127.9 L46.3 129.0 L48.3 130.1 L51.0 132.2 L52.5 133.9 L54.0 136.1 L54.7 136.3 L55.5 135.8 L58.3 124.1 L58.2 123.5 L57.8 123.1 L57.3 123.0 L38.7 125.2Z M43.7 133.1 L40.8 132.3 L37.8 132.2 L34.9 132.8 L33.0 133.6 L31.3 134.6 L29.1 136.6 L27.5 139.1 L26.7 141.0 L21.8 161.7 L21.5 163.7 L21.5 165.7 L22.1 168.6 L22.8 170.5 L23.9 172.2 L25.2 173.7 L26.7 175.0 L28.4 176.0 L30.3 176.8 L32.2 177.2 L35.2 177.3 L37.2 177.0 L40.0 176.0 L42.5 174.3 L43.9 172.9 L45.5 170.4 L46.3 168.6 L51.2 147.8 L51.5 145.8 L51.5 143.8 L51.2 141.9 L50.6 140.0 L49.1 137.4 L47.1 135.2 L45.5 134.0 L43.7 133.1Z M12.1 193.3 L12.0 195.0 L12.6 196.7 L13.7 198.0 L15.3 198.9 L17.0 199.1 L18.1 198.9 L19.2 198.5 L20.5 197.3 L21.3 195.7 L21.5 194.0 L21.1 192.3 L20.4 191.3 L19.6 190.5 L18.0 189.8 L16.3 189.6 L15.1 189.9 L14.1 190.4 L12.8 191.7 L12.1 193.3Z"/>
+            <path class="draw d2" pathLength="1" d="M29.1 48.6 L30.6 42.3 L32.6 35.9 L35.6 28.9 L39.1 22.2 L41.8 17.9 L44.8 13.8 L49.7 8.0 L52.8 8.7 L34.4 86.6 L30.6 85.7 L29.4 80.7 L28.5 75.8 L27.9 70.7 L27.7 63.1 L28.1 55.6 L29.1 48.6Z"/>
+            <circle class="draw d3" pathLength="1" cx="16.7" cy="194.4" r="4.75"/>
+            <path class="cl" d="M7.7 194.4H25.7M16.7 185.4V203.4"/>
+          </svg>
         </div>
-      </a>
-    </div>
-
-    <div class="group-head reveal" id="ftc">
-      <h3>FTC Robotics</h3>
-      <span class="mono">FIRST Tech Challenge · 2022–2026</span>
-    </div>
-    <div class="projects">
-      <a class="card span-7 reveal" href="projects/scorpius.html">
-        <div class="card-media plate"><img src="assets/img/scorpius-035.webp" alt="CAD render of Scorpius robot" loading="lazy"></div>
-        <div class="card-body">
-          <span class="mono card-meta">FTC DECODE · 2025–26 · Team 6832</span>
-          <h3>Scorpius: vision-guided flywheel launcher robot</h3>
-          <p>Carbon fiber tank-drive chassis with a turret, a five-version custom flywheel, and an intake that covers 3× the area. 92 custom parts from 62 unique designs.</p>
-          <div class="tags"><span class="tag">Onshape</span><span class="tag">CNC carbon fiber</span><span class="tag">3D printing</span><span class="tag">3D model</span></div>
-          <span class="card-arrow">View case study</span>
+        <div class="sheet-main">
+          <div class="sheet-title">
+            <p class="name">David Dwyer</p>
+            <p class="tag">CAD, robotics, and design.</p>
+            <p class="sheet-status">Starting…</p>
+            <div class="sheet-bar"><span></span></div>
+          </div>
+          <dl class="titleblock">
+            <div><dt>Part</dt><dd>Brake pedal arm</dd></div>
+            <div><dt>Drawn by</dt><dd>David Dwyer</dd></div>
+            <div><dt>Material</dt><dd>4130 steel</dd></div>
+          </dl>
         </div>
-      </a>
-
-      <a class="card span-5 reveal" href="projects/hawkbot.html">
-        <div class="card-media"><img src="assets/img/hawkbot-v2.webp" alt="Render of HawkBot V2 robot" loading="lazy"></div>
-        <div class="card-body">
-          <span class="mono card-meta">FTC Into the Deep · 2024–25 · Team 3734</span>
-          <h3>HawkBot: our first fully custom chassis</h3>
-          <p>Went from a kit-based prototype to a CNC-machined carbon fiber and polycarbonate robot in one season.</p>
-          <div class="tags"><span class="tag">Fusion 360</span><span class="tag">CAM</span><span class="tag">3D model</span></div>
-          <span class="card-arrow">View case study</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="group-head reveal" id="other">
-      <h3>Other projects</h3>
-      <span class="mono">Personal &amp; community</span>
-    </div>
-    <div class="projects">
-      <a class="card span-5 reveal" href="projects/go-kart.html">
-        <div class="card-media"><img src="assets/img/kart-1.webp" alt="Custom go-kart with roll cage" loading="lazy"></div>
-        <div class="card-body">
-          <span class="mono card-meta">Personal project · Lead builder</span>
-          <h3>Custom go-kart, built to 50 mph</h3>
-          <p>Frame, drivetrain, steering, electrical and safety systems, plus engine and control upgrades.</p>
-          <div class="tags"><span class="tag">Fabrication</span><span class="tag">Drivetrain</span><span class="tag">Tuning</span></div>
-          <span class="card-arrow">View case study</span>
-        </div>
-      </a>
-
-      <a class="card span-7 reveal" href="projects/eagle-scout.html">
-        <div class="card-media"><img src="assets/img/eagle-finished.webp" alt="Finished rainwater collection platform" loading="lazy"></div>
-        <div class="card-body">
-          <span class="mono card-meta">Eagle Scout project · Project manager</span>
-          <h3>Rainwater collection platforms and wayfinding markers</h3>
-          <p>Designed in CAD, then built and installed with 25+ volunteers on a $2,100+ budget. Covered by a local Dallas newspaper.</p>
-          <div class="tags"><span class="tag">CAD</span><span class="tag">Project management</span><span class="tag">Construction</span></div>
-          <span class="card-arrow">View case study</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="skills" style="padding-top:0">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">Toolkit</div>
-        <h2>What I work with</h2>
-      </div>
-    </div>
-    <div class="skills">
-      <div class="skill reveal">
-        <h3>CAD / CAM</h3>
-        <ul>
-          <li>Onshape, Fusion 360</li>
-          <li>Large multi-subsystem assemblies</li>
-          <li>Fusion 360 CAM toolpaths</li>
-          <li>Design for manufacturing</li>
-          <li>Blender rendering and animation</li>
-        </ul>
-      </div>
-      <div class="skill reveal">
-        <h3>Fabrication</h3>
-        <ul>
-          <li>CNC milling (carbon fiber, polycarbonate)</li>
-          <li>3D printing (PLA, nylon, TPU)</li>
-          <li>Carbon fiber layup</li>
-          <li>Aluminum fabrication</li>
-          <li>Hand and power tools, assembly</li>
-        </ul>
-      </div>
-      <div class="skill reveal">
-        <h3>Systems &amp; Software</h3>
-        <ul>
-          <li>Drivetrains: mecanum, tank, swerve</li>
-          <li>Flywheels, linear slides, intakes</li>
-          <li>Sensor integration and system schematics</li>
-          <li>Java, Python</li>
-          <li>Technical presentations</li>
-        </ul>
       </div>
     </div>
   </div>
-</section>
-
-<section id="experience" style="padding-top:0">
-  <div class="wrap two-col">
-    <div class="reveal">
-      <div class="eyebrow">Experience</div>
-      <h2 style="margin-bottom:26px">Leadership</h2>
-      <ul class="list-rows">
-        <li><span class="when">2024–2026</span><div><b>Team Captain &amp; Design Lead, FIRST Tech Challenge</b><span>Teams 6832 Iron Reign &amp; 3734 Iron Giant. Led a 15-member team to Regional and State Championships by coordinating the design, build, and programming sub-teams.</span></div></li>
-        <li><span class="when">2022–2024</span><div><b>Member, FIRST Tech Challenge</b><span>CAD, design and build.</span></div></li>
-        <li><span class="when">2025–now</span><div><b>Pool Technician &amp; Shift Leader, Glen Cove Swim Club</b><span>Maintained filtration and chemical systems, reducing facility downtime by 20%. Named Rookie Lifeguard of the Year (2025).</span></div></li>
-        <li><span class="when">2022–now</span><div><b>Eagle Scout, Troop 838</b><span>Project manager for a community infrastructure build. Teaches younger scouts technical and safety skills.</span></div></li>
-      </ul>
-    </div>
-    <div class="reveal">
-      <div class="eyebrow">Recognition</div>
-      <h2 style="margin-bottom:26px">Honors</h2>
-      <ul class="list-rows">
-        <li><span class="when">2025 · 2026</span><div><b>1st Place Design Award</b><span>Regional FTC engineering honor for our robot designs</span></div></li>
-        <li><span class="when">FTC</span><div><b>1st Place Sustain Award · 2nd Place Inspire Award</b><span>For mechanical innovation, reliability, and engineering documentation</span></div></li>
-        <li><span class="when">Open source</span><div><b>Chassis design used by 12+ teams worldwide</b><span>We published an open-source chassis design that other FTC teams have built</span></div></li>
-        <li><span class="when">Funding</span><div><b>~$13,000 in industry sponsorships</b><span>Raised through presentations to partners including Southwest Airlines</span></div></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="eyebrow">Get in touch</div>
-    <h2>Let's build something.</h2>
-    <p class="lead">I'm looking for engineering internships in mechanical design, manufacturing, and robotics.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="mailto:davidd22@tamu.edu">davidd22@tamu.edu</a>
-      <a class="btn" href="assets/docs/David-Dwyer-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
-      <a class="btn" href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>© <span id="year">2026</span> David Dwyer</span>
-    <span><a href="https://www.linkedin.com/in/daviddwyer" target="_blank" rel="noopener">LinkedIn</a> · Dallas, TX · College Station, TX</span>
-  </div>
-</footer>
+</template>
 
 <script src="js/main.js"></script>
+<script type="module" src="js/viewer.js"></script>
 </body>
 </html>

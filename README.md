@@ -1,78 +1,77 @@
-# David Dwyer: Engineering Portfolio Website
+# David Dwyer: Engineering Portfolio Website (v2, "CAD workspace" design)
 
-This is a static website: plain HTML, CSS, and JavaScript. It needs no build step or framework and costs nothing to host on **GitHub Pages**.
+This is the redesigned version of the site (live at https://daviddwyer.org). On David's PC, the pre-redesign version is kept in the `Portfolio Website` folder.
+
+It is still a plain static website (HTML, CSS and JavaScript) with no build step, so it can be hosted free on **GitHub Pages** exactly like before.
 
 ```
-Portfolio Website/
-├── index.html              ← homepage
-├── projects/               ← one page per case study
+Portfolio Website v2/
+├── index.html                 ← Home: intro splash + the "Welcome" window (About / Projects / Skills / Contact tabs)
+├── projects/                  ← one page per project, laid out like an open CAD document
+│   ├── fsae-brake-pedal.html  ← interactive brake pedal (explode, labels, pedal travel)
 │   ├── scorpius.html
 │   ├── hawkbot.html
 │   ├── go-kart.html
 │   └── eagle-scout.html
-├── css/style.css           ← all styling (colors are at the top)
-├── js/main.js              ← menu, image lightbox, 3D model tabs
+├── css/style.css              ← all styling (colours and sizes are the variables at the top)
+├── js/
+│   ├── main.js                ← intro, tabs, project filter, help box, contents tree, lightbox
+│   ├── viewer.js              ← the 3D viewport (built on three.js)
+│   └── models/                ← one settings file per 3D model
+│       ├── brake-pedal.js     ← part names, pedal motion, exploded view, numbered labels
+│       ├── scorpius.js
+│       └── hawkbot.js
 └── assets/
-    ├── img/                ← web-optimized photos and renders (.webp)
-    ├── models/             ← compressed 3D models (.glb)
-    ├── video/              ← compressed videos (.mp4)
-    └── docs/               ← your résumé PDF
+    ├── img/  video/  docs/    ← same images, videos and résumé as before
+    ├── models/                ← the .glb 3D models (unchanged)
+    └── vendor/three/          ← a copy of three.js r169 (MIT licence), so the site needs no CDN
 ```
 
-The `_previews` folder contains contact sheets Claude used to choose images. It isn't part of the site, and `.gitignore` keeps it from being uploaded. You can delete it.
+---
+
+## What's on the site
+
+**Home page.** The first visit in a browser session shows a short intro: an engineering drawing sheet where the pedal arm draws itself while the projects "load". It can be skipped by clicking anywhere or pressing Esc, and it doesn't replay when someone comes back to Home. Then the **Welcome** window opens over a blue-grey 3D workspace with the brake pedal slowly turning behind it.
+
+- Tabs: **About**, **Projects** (opens by default), **Skills**, **Contact**. Each tab has its own link: `index.html#about`, `#projects`, `#skills`, `#contact`.
+- Projects show as document thumbnails. A filter (All / Formula SAE EV / FTC Robotics / Other) and a name search sit above them. Hovering a project shows its summary and your role in the strip at the bottom of the window.
+- The red **Résumé** button is the only red button on the site.
+
+**Everywhere.**
+- Top-left **Home** button, plus a breadcrumb (David Dwyer › Projects › …).
+- Right edge: Résumé, LinkedIn and email (labels appear on hover).
+- Bottom edge: tabs for Welcome and every project, like open documents.
+- Phones and tablets: the right edge and bottom tabs are replaced by a bottom bar (Home, Résumé, LinkedIn, Email), and the contents tree becomes a **Sections** drop-down.
+- "How to use this site" (the ? button) explains everything in four lines.
+
+**Project pages.** A contents tree on the left (it highlights where you are as you scroll), the 3D view at the top, then the write-up. The text, numbers and images are the same as the original site.
+
+**The brake pedal page.**
+- **Click any part** (or a part in the tree, or a **Show** button in the component table) to highlight it and see what it does.
+- **Labels** puts the numbered balloons 1–7 on the model, matching the component table and the annotated render.
+- **Explode** pulls the assembly apart. **Views** has a 3/4 view, the side view used in the four-position figure, the driver's view and a top view.
+- **Pedal travel** (below the 3D view): press **Play**, drag the slider, or pick position 1–4. The pedal rotates about its pivot bolt, the balance bar's bearing slides along the slot and pushes both master cylinders, and the pedal arm pushes the BOTS toggle lever over. Readouts show the pedal angle, how much of the master cylinder stroke is used, and whether the shutdown circuit is open.
 
 ---
 
 ## Preview it on your computer
 
-Double-click `index.html` to open it in your browser. The 3D models may not load this way, because browsers block local model files. To see everything, you can:
+Double-clicking `index.html` works for everything except the 3D models, because browsers block 3D files opened straight from disk. To see the 3D, run a small local web server:
 
-- In **VS Code**, install the "Live Server" extension, then right-click `index.html` → *Open with Live Server*, **or**
-- In a terminal inside this folder, run `python -m http.server 8000` and open http://localhost:8000.
+- **VS Code:** install the "Live Server" extension, then right-click `index.html` → *Open with Live Server*, **or**
+- **Terminal** (in this folder): `python -m http.server 8000`, then open http://localhost:8000
+
+To skip the intro while you're testing, open `index.html?nointro`.
 
 ---
 
-## Publish free on GitHub Pages (about 10 minutes)
+## Publishing
 
-### 1. Create the repository
-1. Sign in at https://github.com (or create a free account).
-2. Click **+ → New repository**.
-3. Name it **`<your-username>.github.io`**, replacing `<your-username>` with your GitHub username exactly. This name gives the site the clean address `https://<your-username>.github.io`.
-   *(If you choose another name, such as `portfolio`, the site will be at `https://<your-username>.github.io/portfolio/`.)*
-4. Set it to **Public** and click **Create repository**.
+The live site is **https://daviddwyer.org**, served by GitHub Pages from the repository **davidd9831/portfolio** (branch `main`, folder `/ (root)`).
 
-### 2. Upload the files
-
-**Option A, in the browser (easiest):**
-1. On the new repo page, click **uploading an existing file**.
-2. Open this folder in File Explorer, select **everything inside it** (`index.html`, `projects`, `css`, `js`, `assets`, `.nojekyll`, and the rest) **except `_previews`**, and drag it into the upload area.
-3. Click **Commit changes**.
-
-> If the browser upload skips some folders, upload them one at a time. Each file is under GitHub's 25 MB browser limit.
-
-**Option B, with GitHub Desktop (best for future updates):**
-1. Install https://desktop.github.com and sign in.
-2. **File → Clone repository** and pick your new repo.
-3. Copy everything from this folder into the cloned folder, then click **Commit to main → Push origin**.
-
-**Option C, with Git on the command line:**
-```bash
-cd "Portfolio Website"
-git init
-git add .
-git commit -m "Initial portfolio site"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-username>.github.io.git
-git push -u origin main
-```
-
-### 3. Turn on Pages
-1. In the repo, go to **Settings → Pages**.
-2. Under **Build and deployment**, set **Source: Deploy from a branch**, **Branch: `main`**, folder **`/ (root)`**, and click **Save**.
-3. Wait 1–2 minutes and refresh. GitHub will show your live URL at the top of that page.
-
-### 4. (Optional) Use your own domain
-Buy a domain (for example `daviddwyer.dev`, about $10–15/year), then add it under **Settings → Pages → Custom domain** and follow GitHub's DNS instructions. Check **Enforce HTTPS**.
+- The `CNAME` file in the repository holds the custom domain. Keep it; deleting it takes the site off daviddwyer.org.
+- Keep the `.nojekyll` file; it tells GitHub Pages to serve the files exactly as they are.
+- To publish changes: upload the changed files on github.com (**Add file → Upload files**), or use GitHub Desktop (copy the files into the cloned repo folder, then **Commit to main → Push origin**). The site updates within a minute or two; press Ctrl+F5 to skip your browser's cached copy.
 
 ---
 
@@ -80,18 +79,27 @@ Buy a domain (for example `daviddwyer.dev`, about $10–15/year), then add it un
 
 | To change… | Edit… |
 |---|---|
-| Colors | the `--accent`, `--bg`, and related variables at the top of `css/style.css` |
-| Homepage text, stats, and project cards | `index.html` |
-| A case study | the matching file in `projects/` |
-| Add LinkedIn | in `index.html`, find the `<!-- Add your LinkedIn here` comment and remove the comment markers |
+| Colours | the variables at the top of `css/style.css` (`--blue`, `--red`, `--vp-top`/`--vp-bottom` for the 3D background) |
+| About, Skills, Contact text, project cards | `index.html` |
+| A project write-up | the matching file in `projects/` |
 | Replace the résumé | overwrite `assets/docs/David-Dwyer-Resume.pdf` (keep the same name) |
+| Email or LinkedIn address | search all `.html` files for `davidd22@tamu.edu` or `linkedin.com/in/daviddwyer` and replace |
 
-### Adding a new 3D model
-1. Export from Onshape or Fusion 360 as **glTF/GLB** (in Onshape: right-click the assembly → Export → GLTF). You can also export STEP/OBJ and convert it in Blender.
-2. Keep the file under about 10 MB. To shrink it, you can drag it into https://gltf.report and export with Draco compression.
-3. Put it in `assets/models/` and point a `<model-viewer src="...">` tag at it (copy one from `projects/scorpius.html`).
+The title bar, right-edge links, bottom tabs and help text are repeated in every page (there's no build step), so a change to one of them has to be made in all six HTML files. A "find and replace in files" in VS Code does it in one go.
 
-### Adding photos
-Phone photos are 3–7 MB each, which is too heavy for a website. Resize them to about 1600 px wide and convert them to WebP (for example with https://squoosh.app) before adding them to `assets/img/`.
+### Adding a project
+1. Copy the closest existing page in `projects/` and rename it.
+2. Edit its title bar breadcrumb, contents tree, header, properties box and sections.
+3. Add a card for it in `index.html` (copy an existing `<li>` in the project grid and set `data-team` to `fsae`, `ftc` or `other`).
+4. Add a tab for it to the bottom tab bar (`<nav class="doctabs">`) in every page, and update the "Next project" link at the end of the page before it.
 
-After any change, commit and push again (or re-upload the changed file). The live site updates within a minute or two.
+### Adding a 3D model
+1. Export the model as **GLB** (or send Claude a STEP/FBX to convert). Keep it under about 10 MB.
+2. Put it in `assets/models/`.
+3. Copy `js/models/hawkbot.js` to a new file, change the title and the file name in `url`, and set `up: 'z'` if the model was exported Z-up (Fusion 360 STEP exports usually are).
+4. On the project page, add a viewport (copy the `<div class="viewport" id="model" data-viewer="…">` block from `projects/hawkbot.html`) and set `data-viewer` to the new file's name, plus `<script type="module" src="../js/viewer.js"></script>` at the bottom.
+
+### About the brake pedal model and its motion
+- The parts are found by the **component names in the CAD export** (for example `Pedal2:1`, `Stop Plate:1`). If you re-export the GLB from a newer version of the assembly, keep the component names the same and everything keeps working.
+- The motion values were worked out from the CAD geometry: the pivot at the M8 pivot bolt, the 1 in slot (its full length gives exactly the 1.1 in master cylinder stroke), rest with the bearing at the bottom of the slot, and the hard stop where the pedal first touches the stop plate (30.3° of travel). Lock-up (15°) comes from your write-up and the BOTS trip (21°) from your four-position figure. These numbers are at the top of `js/models/brake-pedal.js` if anything changes.
+- The switch maker's model includes a duplicate "DUMMY" toggle body; the viewer hides it so it doesn't stay upright while the real lever is pushed over.
