@@ -74,7 +74,10 @@
     var list = $('[role="tablist"]');
     if (!list) return;
     var tabs = $$('[role="tab"]', list);
+    var area = $('.home-area');
+    var welcome = $('.welcome');
     function select(tab, focus, updateHash) {
+      if (area) area.classList.toggle('is-off-projects', tab.dataset.tab !== 'projects');
       tabs.forEach(function (t) {
         var on = t === tab;
         t.setAttribute('aria-selected', on ? 'true' : 'false');
@@ -113,6 +116,14 @@
         select(t, true, true);
       });
     });
+    // Clicking the workspace around the Welcome window (not the window itself) goes back to Projects
+    var projectsTab = tabs.filter(function (t) { return t.dataset.tab === 'projects'; })[0];
+    if (area && welcome && projectsTab) {
+      area.addEventListener('click', function (e) {
+        if (welcome.contains(e.target)) return;
+        if (projectsTab.getAttribute('aria-selected') !== 'true') select(projectsTab, false, true);
+      });
+    }
     fromHash();
     window.addEventListener('hashchange', fromHash);
   }

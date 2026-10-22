@@ -230,6 +230,9 @@ strong, b { font-weight: 600; }
   overflow: hidden;
 }
 .home-area .bg-viewport { position: absolute; inset: 0; pointer-events: none; }
+/* Off the Projects tab, clicking the workspace around the window returns to Projects */
+.home-area.is-off-projects { cursor: pointer; }
+.home-area.is-off-projects .welcome { cursor: auto; }
 .home-area .bg-viewport .vp-canvas { opacity: 0; transition: opacity 1.2s ease; }
 .home-area .bg-viewport.is-ready .vp-canvas { opacity: 1; }
 .home-area .bg-viewport .vp-triad { left: 16px; bottom: 12px; }
