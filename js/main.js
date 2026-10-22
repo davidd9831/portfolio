@@ -77,7 +77,6 @@
     var area = $('.home-area');
     var welcome = $('.welcome');
     function select(tab, focus, updateHash) {
-      if (area) area.classList.toggle('is-off-projects', tab.dataset.tab !== 'projects');
       tabs.forEach(function (t) {
         var on = t === tab;
         t.setAttribute('aria-selected', on ? 'true' : 'false');
@@ -116,12 +115,18 @@
         select(t, true, true);
       });
     });
-    // Clicking the workspace around the Welcome window (not the window itself) goes back to Projects
+    // Clicking the workspace around the Welcome window (not the window itself):
+    // from About / Skills / Contact it goes back to Projects; from Projects it opens the latest project,
+    // which is the first card in the project grid (the grid lists the newest project first).
     var projectsTab = tabs.filter(function (t) { return t.dataset.tab === 'projects'; })[0];
     if (area && welcome && projectsTab) {
       area.addEventListener('click', function (e) {
         if (welcome.contains(e.target)) return;
-        if (projectsTab.getAttribute('aria-selected') !== 'true') select(projectsTab, false, true);
+        if (projectsTab.getAttribute('aria-selected') !== 'true') { select(projectsTab, false, true); return; }
+        var latest = $('.docgrid .doc');
+        if (!latest) return;
+        if (e.ctrlKey || e.metaKey || e.shiftKey) window.open(latest.href, '_blank', 'noopener');
+        else window.location.assign(latest.href);
       });
     }
     fromHash();

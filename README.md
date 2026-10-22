@@ -38,6 +38,7 @@ Portfolio Website v2/
 - Tabs: **About**, **Projects** (opens by default), **Skills**, **Contact**. Each tab has its own link: `index.html#about`, `#projects`, `#skills`, `#contact`.
 - Projects show as document thumbnails. A filter (All / Formula SAE EV / FTC Robotics / Other) and a name search sit above them. Hovering a project shows its summary and your role in the strip at the bottom of the window.
 - The red **Résumé** button is the only red button on the site.
+- Clicking the workspace around the Welcome window goes back to the Projects tab from any other tab. On the Projects tab it opens the latest project, which is the **first card in the project grid**, so keep the newest project first.
 
 **Everywhere.**
 - Top-left **Home** button, plus a breadcrumb (David Dwyer › Projects › …).
@@ -92,7 +93,7 @@ The title bar, right-edge links, bottom tabs and help text are repeated in every
 ### Adding a project
 1. Copy the closest existing page in `projects/` and rename it.
 2. Edit its title bar breadcrumb, contents tree, header, properties box and sections.
-3. Add a card for it in `index.html` (copy an existing `<li>` in the project grid and set `data-team` to `fsae`, `ftc` or `other`).
+3. Add a card for it in `index.html` (copy an existing `<li>` in the project grid and set `data-team` to `fsae`, `ftc` or `other`). Put it first if it's your newest project; clicking the home page background on the Projects tab opens the first card.
 4. Add a tab for it to the bottom tab bar (`<nav class="doctabs">`) in every page, and update the "Next project" link at the end of the page before it.
 
 ### Adding a 3D model
